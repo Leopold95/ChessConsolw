@@ -167,7 +167,8 @@ public:
 
 	//"учит" фигуру  "ходить" на доске
 	static void initialisePieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>* mp)
-	{
+	{ 
+
 		std::vector<MoveType> pawnMoveTypes;
 		pawnMoveTypes.push_back(MoveType::Forword);
 		pawnMoveTypes.push_back(MoveType::Dioganally);
