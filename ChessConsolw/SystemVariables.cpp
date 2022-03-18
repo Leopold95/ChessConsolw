@@ -17,10 +17,9 @@ std::unordered_map<PieceList, std::vector<MoveType>>& SystemVariables::getPieceM
 	return pieceMoveTypes;
 }
 
-void SystemVariables::initialise()
-{
-	Utils::initialiseDefaulPieceOnDeskMap(piecesOnDeskMap);
-	Utils::initialisePieceMoveTypes(pieceMoveTypes);
-}
 
-SystemVariables::SystemVariables() { initialise(); }
+SystemVariables::SystemVariables() 
+{ 
+	_pieceManger.placeStarterPieceOnDesk(piecesOnDeskMap);
+	_pieceManger.buildPieceMoveTypes(pieceMoveTypes);
+}

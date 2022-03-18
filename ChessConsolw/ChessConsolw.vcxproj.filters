@@ -48,6 +48,9 @@
     <ClCompile Include="Client.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+    <ClCompile Include="PieceManager.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
@@ -109,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="Client.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceManager.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Pieces.hpp">
+      <Filter>ChessPiesces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

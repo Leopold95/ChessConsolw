@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "Utils.hpp"
+#include "PieceManager.h"
 #include "Piece.hpp"
 #include "MoveType.hpp"
 
@@ -24,8 +24,7 @@ public:
 private:
 	SystemVariables();
 	static SystemVariables instanse;
-
-	void initialise(); //needs for initialise all variables - called automatically when class constructor were called
+	PieceManager _pieceManger;
 
 	//словарь положения и полной информации каждой фигуры на доске
 	//в строке содержится уникальный ид для каждой фигуры
