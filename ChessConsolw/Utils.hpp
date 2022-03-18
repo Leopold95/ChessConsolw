@@ -165,43 +165,42 @@ public:
 		else return 0;
 	}
 
-	//"учит" фигуру  "ходить" на доске
-	static void initialisePieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>* mp)
+	//"учит" фигуру "ходить" на доске
+	static void initialisePieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>& mp)
 	{ 
-
 		std::vector<MoveType> pawnMoveTypes;
 		pawnMoveTypes.push_back(MoveType::Forword);
 		pawnMoveTypes.push_back(MoveType::Dioganally);
-		mp->emplace(PieceList::Bishop, pawnMoveTypes);
+		mp.emplace(PieceList::Bishop, pawnMoveTypes);
 
 		std::vector<MoveType> kingMoveTypes;
 		kingMoveTypes.push_back(MoveType::OneStep);
 		kingMoveTypes.push_back(MoveType::OneStepDioganally);
 		kingMoveTypes.push_back(MoveType::BackwordOneStep);
 		kingMoveTypes.push_back(MoveType::BackwordOneStepDioganally);
-		mp->emplace(PieceList::King, kingMoveTypes);
+		mp.emplace(PieceList::King, kingMoveTypes);
 
 		std::vector<MoveType> queenMoveTypes;
 		queenMoveTypes.push_back(MoveType::Forword);
 		queenMoveTypes.push_back(MoveType::Dioganally);
 		queenMoveTypes.push_back(MoveType::Backword);
 		queenMoveTypes.push_back(MoveType::BackwordDiogannaly);
-		mp->emplace(PieceList::Queen, queenMoveTypes);
+		mp.emplace(PieceList::Queen, queenMoveTypes);
 
 		std::vector<MoveType> rookMoveTypes;
 		rookMoveTypes.push_back(MoveType::Forword);
 		rookMoveTypes.push_back(MoveType::Backword);
 		rookMoveTypes.push_back(MoveType::Right);
 		rookMoveTypes.push_back(MoveType::Left);
-		mp->emplace(PieceList::Rook, rookMoveTypes);
+		mp.emplace(PieceList::Rook, rookMoveTypes);
 
 		std::vector<MoveType> knightMoveTyps;
 		knightMoveTyps.push_back(MoveType::Dioganally);
 		kingMoveTypes.push_back(MoveType::BackwordDiogannaly);
-		mp->emplace(PieceList::Knight, knightMoveTyps);
+		mp.emplace(PieceList::Knight, knightMoveTyps);
 
 		std::vector<MoveType> bishopMoveTypes;
 		bishopMoveTypes.push_back(MoveType::Bishop);
-		mp->emplace(PieceList::Bishop, bishopMoveTypes);
+		mp.emplace(PieceList::Bishop, bishopMoveTypes);
 	}
 };

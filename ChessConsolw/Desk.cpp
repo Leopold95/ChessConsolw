@@ -61,6 +61,10 @@ void Desk::tryMovePiece(string firstPos, string secondPos, PieceList& piece)
 
 bool Desk::checkValidPiecePosition(string position)
 {
+    for (const auto& i :)
+    {
+
+    }
     //for (const auto& item : sv.getAllPositionList())
     //{
     //    if (position == item)

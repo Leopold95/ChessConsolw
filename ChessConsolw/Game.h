@@ -12,7 +12,9 @@ public:
 	void startNewGame();
 	void endCurrentGame();
 
+	~Game();
+
 private:
-	std::unique_ptr<Desk> desk = std::make_unique<Desk>(new Desk);
+	Desk* desk = new Desk();
 };
 
