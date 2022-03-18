@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ChessPiesces">
+      <UniqueIdentifier>{50503fb9-d1da-4da4-b008-f00ba6b2a9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{ac08ef54-9206-4e2d-a8ab-b209a15fa99a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{9f2e50b4-04a1-4153-9985-62e6d029f634}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChessConsole.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Desk.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceList.hpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandRemouter.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemVariables.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Desk.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="MovmentType.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandRemouter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="King.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Queen.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Bishop.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionList.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemVariables.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorMessage.hpp">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveType.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
