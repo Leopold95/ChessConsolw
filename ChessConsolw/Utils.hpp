@@ -2,23 +2,15 @@
 
 #include <vector>
 #include <string>
-#include <list>
 #include <iostream>
 #include <unordered_map>
 
-#include "Piece.hpp"
-#include "PieceList.hpp"
+#include "Pieces.hpp"
+
 #include "MoveType.hpp"
 
-#include "Location.hpp"
 #include "SystemVariables.h"
 
-#include "Pawn.hpp"
-#include "King.hpp"
-#include "Queen.hpp"
-#include "Rook.hpp"
-#include "Knight.hpp"
-#include "Bishop.hpp"
 
 using vecstr = std::vector<std::string>;
 using std::string;

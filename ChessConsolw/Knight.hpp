@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Color.hpp"
 #include "Piece.hpp"
 
 class Knight : public Piece

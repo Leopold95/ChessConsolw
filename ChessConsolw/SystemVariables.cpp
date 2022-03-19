@@ -1,6 +1,7 @@
 #include "SystemVariables.h"
 
 SystemVariables SystemVariables::instanse;
+PieceManager SystemVariables::_pieceManger;
 
 SystemVariables& SystemVariables::GetInstanse()
 {
@@ -20,6 +21,6 @@ std::unordered_map<PieceList, std::vector<MoveType>>& SystemVariables::getPieceM
 
 SystemVariables::SystemVariables() 
 { 
-	_pieceManger.placeStarterPieceOnDesk(piecesOnDeskMap);
-	_pieceManger.buildPieceMoveTypes(pieceMoveTypes);
+	//_pieceManger.placeStarterPieceOnDesk(piecesOnDeskMap);
+	//_pieceManger.buildPieceMoveTypes(pieceMoveTypes);
 }

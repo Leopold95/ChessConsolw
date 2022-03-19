@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Piece.hpp"
-#include "Color.hpp"
 
 class Rook : public Piece
 {

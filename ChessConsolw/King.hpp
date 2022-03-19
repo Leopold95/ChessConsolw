@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Piece.hpp"
-#include "Color.hpp"
-
 
 class King : public  Piece
 {
