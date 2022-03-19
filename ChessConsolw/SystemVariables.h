@@ -6,6 +6,7 @@
 
 #include "PieceManager.h"
 #include "MoveType.hpp"
+#include "Pieces.hpp"
 
 class SystemVariables
 {
@@ -20,7 +21,8 @@ public:
 private:
 	SystemVariables();
 	static SystemVariables instanse;
-	static PieceManager _pieceManger;
+	PieceManager _pieceManger;
+	
 
 	//словарь положения и полной информации каждой фигуры на доске
 	//в строке содержится уникальный ид для каждой фигуры

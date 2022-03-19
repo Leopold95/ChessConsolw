@@ -1,7 +1,6 @@
 #include "SystemVariables.h"
 
 SystemVariables SystemVariables::instanse;
-PieceManager SystemVariables::_pieceManger;
 
 SystemVariables& SystemVariables::GetInstanse()
 {

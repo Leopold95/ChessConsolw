@@ -1,4 +1,6 @@
 #pragma once
+#ifndef _UTILS_HPP_
+#define _UTILS_HPP_
 
 #include <vector>
 #include <string>
@@ -6,9 +8,6 @@
 #include <unordered_map>
 
 #include "Pieces.hpp"
-
-#include "MoveType.hpp"
-
 #include "SystemVariables.h"
 
 
@@ -116,3 +115,5 @@ public:
 		else return 0;
 	}
 };
+
+#endif

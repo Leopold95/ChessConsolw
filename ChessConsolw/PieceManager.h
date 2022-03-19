@@ -4,10 +4,9 @@
 #include <string>
 #include <vector>
 
-#include "Utils.hpp"
 #include "Pieces.hpp"
 #include "MoveType.hpp"
-
+//#include "Utils.hpp"
 
 class PieceManager
 {
@@ -19,5 +18,8 @@ public:
 
 	// задать для каждой фигуры на доске начальное стандартное положение
 	void placeStarterPieceOnDesk(std::unordered_map<std::string, Piece*>& mp);
+
+private:
+	std::string generateRandomString();
 };
 
