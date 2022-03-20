@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Utils.hpp"
 #include "Desk.h"
-#include "SystemVariables.h"
+#include "PieceManager.h"
+#include "GameLogic.h"
 
 class Game
 {
@@ -13,6 +13,8 @@ public:
 	~Game();
 
 private:
-	Desk* desk = new Desk();
+	Desk* _desk = new Desk();
+	PieceManager* _pieceManager = new PieceManager();
+	GameLogic* _gameLogic = new GameLogic();
 };
 

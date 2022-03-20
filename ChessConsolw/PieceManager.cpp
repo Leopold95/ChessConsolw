@@ -1,18 +1,6 @@
 #include "PieceManager.h"
 
-PieceManager::PieceManager()
-{
-
-}
-
-void PieceManager::tryMovePiece(Location loc1, Location loc2)
-{
-	//проверка на правельное положение фигуры
-	//for (const auto& item : sv.)
-	//{
-
-	//}
-}
+PieceManager::PieceManager() {}
 
 void PieceManager::buildPieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>& mp)
 {
@@ -50,6 +38,14 @@ void PieceManager::buildPieceMoveTypes(std::unordered_map<PieceList, std::vector
 	std::vector<MoveType> bishopMoveTypes;
 	bishopMoveTypes.push_back(MoveType::Bishop);
 	mp.emplace(PieceList::Bishop, bishopMoveTypes);
+}
+std::unordered_map<PieceList, std::vector<MoveType>> PieceManager::buildPieceMoveTypes()
+{
+	std::unordered_map<PieceList, std::vector<MoveType>> mp;
+
+	buildPieceMoveTypes(mp);
+
+	return mp;
 }
 
 void PieceManager::placeStarterPieceOnDesk(std::unordered_map<std::string, Piece*>& mp)
@@ -91,7 +87,6 @@ void PieceManager::placeStarterPieceOnDesk(std::unordered_map<std::string, Piece
 	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(7, 1)));
 	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(8, 1)));
 }
-
 std::unordered_map<std::string, Piece*> PieceManager::placeStarterPieceOnDesk()
 {
 	std::unordered_map<std::string, Piece*> mp;

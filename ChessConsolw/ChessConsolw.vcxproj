@@ -164,6 +164,7 @@
     <ClCompile Include="CommandRemouter.cpp" />
     <ClCompile Include="Desk.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
     <ClCompile Include="SystemVariables.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Desk.h" />
     <ClInclude Include="ErrorMessage.hpp" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameLogic.h" />
     <ClInclude Include="King.hpp" />
     <ClInclude Include="Knight.hpp" />
     <ClInclude Include="Location.hpp" />

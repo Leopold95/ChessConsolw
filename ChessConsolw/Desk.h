@@ -21,7 +21,6 @@ public:
     std::string PritebleDesk[9][9];
 
 private:
-    const static short SIZE = 8;
     PieceManager _pieceManager;
 
 

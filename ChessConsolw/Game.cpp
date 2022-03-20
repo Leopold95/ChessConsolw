@@ -2,36 +2,27 @@
 
 Game::~Game()
 {
-	delete desk;
+	delete _desk;
 }
 
 void Game::startNewGame()
 {
 	system("CLS");
 
-	for (const auto& piece : desk->Pieces)
+	for (const auto& piece : _desk->Pieces)
 	{
 		int a = piece.second->CurrentLocation().x;
 		int b = piece.second->CurrentLocation().y;
 
-		desk->PritebleDesk[b][a] = (char)piece.second->CurrentPiece();
+		_desk->PritebleDesk[b][a] = (char)piece.second->CurrentPiece();
 	}
 
-	desk->print(desk->PritebleDesk);
-
-	Location testLocation(2, 4);
-	Location testLocation2(5, 6);
-
-	//Location testLoc(9, 8);
-
-	//if()
-
+	_desk->print(_desk->PritebleDesk);
 }
 
 void Game::endCurrentGame()
 {
 	system("CLS");
-	Utils::println("ќжидание игры...");
 }
 
 

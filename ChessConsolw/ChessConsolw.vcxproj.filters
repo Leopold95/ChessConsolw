@@ -48,6 +48,9 @@
     <ClCompile Include="PieceList.hpp">
       <Filter>ChessPiesces</Filter>
     </ClCompile>
+    <ClCompile Include="GameLogic.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Pieces.hpp">
       <Filter>ChessPiesces</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

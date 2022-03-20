@@ -1,7 +1,6 @@
 #pragma once
 
 #include <exception>
-#include <assert.h>
 
 struct Location
 {
