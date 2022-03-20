@@ -1,16 +1,17 @@
 #include "PieceManager.h"
 
+PieceManager::PieceManager()
+{
+
+}
+
 void PieceManager::tryMovePiece(Location loc1, Location loc2)
 {
 	//проверка на правельное положение фигуры
-	//TODO && / ||
-	if (loc1.y <= 1 && loc1.y >= 8) throw new std::exception("Bad loc1 y location");
-	if (loc1.x <= 1 && loc1.x >= 8) throw new std::exception("Bad loc1 x location");
-	if (loc2.y <= 1 && loc2.y >= 8) throw new std::exception("Bad loc2 y location");
-	if (loc2.x <= 1 && loc2.x >= 8) throw new std::exception("Bad loc2 x location");
+	//for (const auto& item : sv.)
+	//{
 
-
-
+	//}
 }
 
 void PieceManager::buildPieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>& mp)
@@ -89,6 +90,15 @@ void PieceManager::placeStarterPieceOnDesk(std::unordered_map<std::string, Piece
 	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::Black, Location(6, 1)));
 	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(7, 1)));
 	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(8, 1)));
+}
+
+std::unordered_map<std::string, Piece*> PieceManager::placeStarterPieceOnDesk()
+{
+	std::unordered_map<std::string, Piece*> mp;
+
+	placeStarterPieceOnDesk(mp);
+
+	return mp;
 }
 
 std::string PieceManager::generateRandomString()

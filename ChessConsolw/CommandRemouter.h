@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <map>
 
 #include "Piece.hpp"
 #include "PieceList.hpp"

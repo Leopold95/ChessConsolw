@@ -9,16 +9,22 @@ void Game::startNewGame()
 {
 	system("CLS");
 
-	for (const auto& piece : sv.getPiecesOnDeskMap())
+	for (const auto& piece : desk->Pieces)
 	{
 		int a = piece.second->CurrentLocation().x;
 		int b = piece.second->CurrentLocation().y;
 
-		desk->clearDeskTemplate[b][a] = (char)piece.second->CurrentPiece();
+		desk->PritebleDesk[b][a] = (char)piece.second->CurrentPiece();
 	}
 
-	desk->print(desk->clearDeskTemplate);
+	desk->print(desk->PritebleDesk);
 
+	Location testLocation(2, 4);
+	Location testLocation2(5, 6);
+
+	//Location testLoc(9, 8);
+
+	//if()
 
 }
 

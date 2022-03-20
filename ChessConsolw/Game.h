@@ -1,8 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <memory>
-
 #include "Utils.hpp"
 #include "Desk.h"
 #include "SystemVariables.h"
@@ -17,6 +14,5 @@ public:
 
 private:
 	Desk* desk = new Desk();
-	SystemVariables& sv = SystemVariables::GetInstanse();
 };
 
