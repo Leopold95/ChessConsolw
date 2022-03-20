@@ -12,8 +12,11 @@ GameLogic::GameLogic(Desk& desk, PieceManager& pieceManager)
 
 void GameLogic::tryMovePiece(Location loc1, Location loс2)
 {
-	for (const auto& item : desk.Pieces)
+	for (const auto item : desk.Pieces)
 	{
-		if (item.second->CurrentLocation() != loc1) throw new std::exception("Созной фигуры нету в данном положении");
+		if (item.second->CurrentLocation() == loc1)
+			if (item.second->CurrentColor() == Color::White) 
+				std::cout << " положение совпадает" << std::endl;
 	}
+
 }

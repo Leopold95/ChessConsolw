@@ -1,8 +1,8 @@
 #pragma once
 
-enum  class Color
+enum  class Color : char
 {
-	None,
-	White,
-	Black
+	None = 'N',
+	White = 'W',
+	Black = 'B'
 };

@@ -4,6 +4,8 @@
 #include "Desk.h"
 #include "PieceManager.h"
 
+#include <iostream>
+
 class GameLogic
 {
 public:
