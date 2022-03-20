@@ -21,19 +21,30 @@ class Desk
 public:
     void print(DeskType);
     void print(DeskType, std::unordered_map<std::string, Piece*>&);
+    void print(std::string desk[9][9]);
+
     void initilisePieces(std::unordered_map<std::string, Piece*>&);
     void create();
     void setPieces();
 
 
-    void tryMovePiece(string firstPos, string secondPos, PieceList& piece);
+    std::string clearDeskTemplate[9][9]
+    {
+    {" ", "À", "Á", "Â", "Ã", "Ä", "E", "¨", "Æ"},
+    { "1", "", "", "", "", "", "", "", "" },
+    { "2", "", "", "", "", "", "", "", "" },
+    { "3", "", "", "", "", "", "", "", "" },
+    { "4", "", "", "", "", "", "", "", "" },
+    { "5", "", "", "", "", "", "", "", "" },
+    { "6", "", "", "", "", "", "", "", "" },
+    { "7", "", "", "", "", "", "", "", "" },
+    { "8", "", "", "", "", "", "", "", "" },
+    };
 
 private:
     const static short SIZE = 8;
 
-    //SystemVariables& sv = SystemVariables::GetInstanse();
-
-    bool checkValidPiecePosition(string position);
+    //SystemVariables& sv = SystemVariables::GetInstanse()
 
     std::string desktemplatee[9][9] =
     {

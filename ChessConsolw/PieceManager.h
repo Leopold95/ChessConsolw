@@ -11,7 +11,7 @@
 class PieceManager
 {
 public:
-	void tryMovePiece();
+	void tryMovePiece(Location loc1, Location loс2);
 
 	//"учит" фигуру "ходить" на доске
 	void buildPieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>& mp);
@@ -21,5 +21,8 @@ public:
 
 private:
 	std::string generateRandomString();
+
+	template <typename T>
+	T getPieceFromLocation(Location loc);
 };
 

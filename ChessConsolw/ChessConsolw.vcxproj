@@ -164,7 +164,6 @@
     <ClCompile Include="CommandRemouter.cpp" />
     <ClCompile Include="Desk.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
     <ClCompile Include="SystemVariables.cpp" />
@@ -177,7 +176,6 @@
     <ClInclude Include="Desk.h" />
     <ClInclude Include="ErrorMessage.hpp" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameManager.h" />
     <ClInclude Include="King.hpp" />
     <ClInclude Include="Knight.hpp" />
     <ClInclude Include="Location.hpp" />
@@ -194,6 +192,7 @@
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

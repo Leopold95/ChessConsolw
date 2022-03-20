@@ -8,5 +8,5 @@ enum class PieceList : char
 	Rook = 'r',
 	Knight = 'k',
 	Bishop = 'b',
-	None
+	None = ' '
 };

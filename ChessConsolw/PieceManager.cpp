@@ -1,7 +1,16 @@
 #include "PieceManager.h"
 
-void PieceManager::tryMovePiece()
+void PieceManager::tryMovePiece(Location loc1, Location loc2)
 {
+	//проверка на правельное положение фигуры
+	//TODO && / ||
+	if (loc1.y <= 1 && loc1.y >= 8) throw new std::exception("Bad loc1 y location");
+	if (loc1.x <= 1 && loc1.x >= 8) throw new std::exception("Bad loc1 x location");
+	if (loc2.y <= 1 && loc2.y >= 8) throw new std::exception("Bad loc2 y location");
+	if (loc2.x <= 1 && loc2.x >= 8) throw new std::exception("Bad loc2 x location");
+
+
+
 }
 
 void PieceManager::buildPieceMoveTypes(std::unordered_map<PieceList, std::vector<MoveType>>& mp)
@@ -104,4 +113,10 @@ std::string PieceManager::generateRandomString()
 	}
 
 	return s;
+}
+
+template <typename T>
+T PieceManager::getPieceFromLocation(Location loc)
+{
+	return Pawn(PieceList::Pawn, Color::White, Location(8, 8));
 }

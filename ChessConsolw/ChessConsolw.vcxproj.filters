@@ -30,9 +30,6 @@
     <ClCompile Include="Desk.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="PieceList.hpp">
-      <Filter>System</Filter>
-    </ClCompile>
     <ClCompile Include="CommandRemouter.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -42,14 +39,14 @@
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="PieceManager.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceList.hpp">
+      <Filter>ChessPiesces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +104,6 @@
     <ClInclude Include="Game.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Client.h">
       <Filter>Network</Filter>
     </ClInclude>
@@ -122,5 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

@@ -28,9 +28,17 @@ void Desk::print(DeskType dt)
     }
 }
 
-void Desk::print(DeskType dt, std::unordered_map<std::string, Piece*>& mp)
+void Desk::print(std::string desk[9][9])
 {
+    for (size_t i = 0; i < 9; i++)
+    {
+        for (size_t j = 0; j < 9; j++)
+        {
+            std::cout << desk[i][j];
+        }
 
+        std::cout << std::endl;
+    }
 }
 
 void Desk::initilisePieces(std::unordered_map<std::string, Piece*>& mp)
@@ -47,37 +55,4 @@ void Desk::setPieces()
 {
 
 }
-
-void Desk::tryMovePiece(string firstPos, string secondPos, PieceList& piece)
-{
-    if (checkValidPiecePosition(firstPos) == false) throw new std::exception("first posistion in not valid");
-    if (checkValidPiecePosition(secondPos) == false) throw new std::exception("second position in not valid");
-
-
-    //switch (piece)
-    //{
-    //}
-}
-
-bool Desk::checkValidPiecePosition(string position)
-{
-    //for (const auto& i :)
-    //{
-
-    //}
-    //for (const auto& item : sv.getAllPositionList())
-    //{
-    //    if (position == item)
-    //    {
-    //        return true;
-    //    }
-    //    else
-    //    {
-    //        continue;
-    //    }
-    //}
-
-    return false;
-}
-
 

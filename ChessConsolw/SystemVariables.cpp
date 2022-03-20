@@ -7,12 +7,12 @@ SystemVariables& SystemVariables::GetInstanse()
 	return instanse;
 }
 
-std::unordered_map<std::string, Piece*>& SystemVariables::getPiecesOnDeskMap()
+std::unordered_map<std::string, Piece*> SystemVariables::getPiecesOnDeskMap()
 {
 	return piecesOnDeskMap;
 }
 
-std::unordered_map<PieceList, std::vector<MoveType>>& SystemVariables::getPieceMoveTypes()
+std::unordered_map<PieceList, std::vector<MoveType>> SystemVariables::getPieceMoveTypes()
 {
 	return pieceMoveTypes;
 }
@@ -20,6 +20,6 @@ std::unordered_map<PieceList, std::vector<MoveType>>& SystemVariables::getPieceM
 
 SystemVariables::SystemVariables() 
 { 
-	//_pieceManger.placeStarterPieceOnDesk(piecesOnDeskMap);
-	//_pieceManger.buildPieceMoveTypes(pieceMoveTypes);
+	_pieceManger.placeStarterPieceOnDesk(piecesOnDeskMap);
+	_pieceManger.buildPieceMoveTypes(pieceMoveTypes);
 }

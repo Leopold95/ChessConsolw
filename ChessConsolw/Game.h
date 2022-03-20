@@ -5,6 +5,7 @@
 
 #include "Utils.hpp"
 #include "Desk.h"
+#include "SystemVariables.h"
 
 class Game
 {
@@ -16,5 +17,6 @@ public:
 
 private:
 	Desk* desk = new Desk();
+	SystemVariables& sv = SystemVariables::GetInstanse();
 };
 
