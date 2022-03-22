@@ -20,7 +20,8 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 		if (item.second->CurrentLocation() == loc2)
 			if (item.second->CurrentColor() == Color::Black) //вражеская фигур есть
 			{
-				killPiece();
+				Piece& p = getPieceFromLocation(loc2);
+				killPiece(p);
 			}
 	}
 
@@ -28,24 +29,23 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 
 void GameLogic::killPiece(Piece& piece)
 {
-	
+	piece.Kill();
 }
 
-template<typename P>
-inline P GameLogic::getPieceFromLocation(Location loc)
+Piece& GameLogic::getPieceFromLocation(Location loc)
 {
-	Piece& p;
-
 	for (auto& item : Desk::GetInstanse().Pieces)
 	{
 		if (item.second->CurrentLocation() == loc)
 		{
-			return item.second;
+			return *item.second;
 		}		
 	}
 
 	throw new std::exception("didnt find any valid location");
 
-	return p;
+	Pawn p = Pawn(PieceList::None, Color::None, Location(), false);
+
+	return p; 
 }
 

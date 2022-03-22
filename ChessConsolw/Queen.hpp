@@ -35,9 +35,9 @@ public:
 		return isAlive;
 	}
 
-	void SetAlive(bool b)
+	void Kill() override
 	{
-		isAlive = b;
+		isAlive = false;
 	}
 
 

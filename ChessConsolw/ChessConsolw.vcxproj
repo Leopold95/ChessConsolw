@@ -164,6 +164,7 @@
     <ClCompile Include="CommandRemouter.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Desk.cpp" />
+    <ClCompile Include="EmptyPiece.hpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="PieceList.hpp" />

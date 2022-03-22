@@ -3,6 +3,7 @@
 #include "Location.hpp"
 #include "Desk.h"
 #include "PieceManager.h"
+#include "EmptyPiece.hpp"
 
 #include <iostream>
 
@@ -18,6 +19,5 @@ public:
 private:
 	PieceManager pieceManager;
 
-	template<typename P>
-	P getPieceFromLocation(Location loc);
+	Piece& getPieceFromLocation(Location loc);
 };

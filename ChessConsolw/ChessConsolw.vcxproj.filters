@@ -54,6 +54,9 @@
     <ClCompile Include="Console.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="EmptyPiece.hpp">
+      <Filter>ChessPiesces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
