@@ -5,11 +5,12 @@
 class Pawn : public Piece
 {
 public:
-	Pawn(PieceList p, Color c, Location l)
+	Pawn(PieceList p, Color c, Location l, bool a)
 	{
 		piece = p;
 		color = c;
 		location = l;
+		isAlive = a;
 	}
 
 
@@ -29,9 +30,20 @@ public:
 		return color;
 	}
 
+	bool IsAlive() override
+	{
+		return isAlive;
+	}
+
+	void SetAlive(bool b)
+	{
+		isAlive = b;
+	}
+
 
 private:
 	PieceList piece;
 	Color color;
 	Location location;
+	bool isAlive;
 };

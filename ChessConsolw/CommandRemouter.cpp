@@ -21,12 +21,7 @@ void CommandRemouter::onNewCommand(std::string c)
 
 void CommandRemouter::onNewCommandArgs(vecstr& args)
 {
-	//print(args[0]);
-	//print(args[1]);
-	//print(args[2]);
-
-
-	if (args[0] == "move")
+	if (boost::algorithm::iequals(args[0], "move"))
 	{
 		string firstPos = args[1];
 		string secondPos = args[2];

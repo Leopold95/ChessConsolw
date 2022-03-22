@@ -162,6 +162,7 @@
     <ClCompile Include="ChessConsole.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CommandRemouter.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="Desk.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLogic.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="CommandRemouter.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="Desk.h" />
     <ClInclude Include="ErrorMessage.hpp" />
     <ClInclude Include="Game.h" />

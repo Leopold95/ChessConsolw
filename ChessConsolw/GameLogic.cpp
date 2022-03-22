@@ -4,19 +4,48 @@ GameLogic::GameLogic()
 {
 }
 
-GameLogic::GameLogic(Desk& desk, PieceManager& pieceManager)
+GameLogic::GameLogic(PieceManager& pieceManager)
 {
-	this->desk = desk;
 	this->pieceManager = pieceManager;
 }
 
-void GameLogic::tryMovePiece(Location loc1, Location loс2)
+void GameLogic::tryMovePiece(Location loc1, Location loc2)
 {
-	for (const auto item : desk.Pieces)
+	for (const auto item : Desk::GetInstanse().Pieces)
 	{
 		if (item.second->CurrentLocation() == loc1)
 			if (item.second->CurrentColor() == Color::White) 
-				std::cout << " положение совпадает" << std::endl;
+				std::cout << "Союзнаа фигура есть" << std::endl;
+
+		if (item.second->CurrentLocation() == loc2)
+			if (item.second->CurrentColor() == Color::Black) //вражеская фигур есть
+			{
+				killPiece();
+			}
 	}
 
 }
+
+void GameLogic::killPiece(Piece& piece)
+{
+	
+}
+
+template<typename P>
+inline P GameLogic::getPieceFromLocation(Location loc)
+{
+	Piece& p;
+
+	for (auto& item : Desk::GetInstanse().Pieces)
+	{
+		if (item.second->CurrentLocation() == loc)
+		{
+			return item.second;
+		}		
+	}
+
+	throw new std::exception("didnt find any valid location");
+
+	return p;
+}
+

@@ -68,26 +68,6 @@ public:
 		std::cout << s << std::endl;
 	}
 
-	//считать стороку с аргументами с косоли
-	static string getConsoleString()
-	{
-		std::string n = "";
-		std::getline(std::cin, n);
-
-		return n;
-	}
-
-	//получить map piecelist enum и символ фигуры к нему
-	static void getPieceSymbolMap(std::unordered_map<PieceList, char>& map)
-	{
-		map.insert(std::make_pair(PieceList::Bishop, 'b'));
-		map.insert(std::make_pair(PieceList::King, 'K'));
-		map.insert(std::make_pair(PieceList::Knight, 'k'));
-		map.insert(std::make_pair(PieceList::Pawn, 'p'));
-		map.insert(std::make_pair(PieceList::Queen, 'Q'));
-		map.insert(std::make_pair(PieceList::Rook, 'r'));
-	}
-
 	static void deletePiecesInMap(std::unordered_map<std::string, Piece*>& mp)
 	{
 		for (auto& item : mp)
@@ -99,20 +79,6 @@ public:
 	static void deletePiece(Piece* piece)
 	{
 		delete piece;
-	}
-
-	//возвращает 1-8 из A-B
-	static int makeNumberFromStringPosition(string& location)
-	{
-		if (location.compare("A") == 0) return 1;
-		else if (location.compare("B") == 0) return 2;
-		else if (location.compare("C") == 0) return 3;
-		else if (location.compare("D") == 0) return 4;
-		else if (location.compare("E") == 0) return 5;
-		else if (location.compare("F") == 0) return 6;
-		else if (location.compare("G") == 0) return 7;
-		else if (location.compare("H") == 0) return 8;
-		else return 0;
 	}
 };
 

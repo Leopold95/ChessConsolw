@@ -5,11 +5,12 @@
 class Rook : public Piece
 {
 public:
-	Rook(PieceList p, Color c, Location l)
+	Rook(PieceList p, Color c, Location l, bool a)
 	{
 		piece = p;
 		color = c;
 		location = l;
+		isAlive = a;
 	}
 
 
@@ -23,10 +24,20 @@ public:
 	{
 		return location;
 	}
-
-	Color CurrentColor()
+	 
+	Color CurrentColor() override
 	{
 		return color;
+	}
+
+	bool IsAlive() override
+	{
+		return isAlive;
+	}
+
+	void SetAlive(bool b)
+	{
+		isAlive = b;
 	}
 
 
@@ -34,4 +45,5 @@ private:
 	PieceList piece;
 	Color color;
 	Location location;
+	bool isAlive;
 };

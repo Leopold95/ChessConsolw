@@ -10,12 +10,14 @@ class GameLogic
 {
 public:
 	GameLogic();
-	GameLogic(Desk& desk, PieceManager& pieceManager);
+	GameLogic(PieceManager& pieceManager);
 
 	void tryMovePiece(Location loc1, Location loñ2);
+	void killPiece(Piece& piece);
 
 private:
-	Desk desk;
 	PieceManager pieceManager;
-};
 
+	template<typename P>
+	P getPieceFromLocation(Location loc);
+};

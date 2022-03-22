@@ -13,7 +13,8 @@ using std::string;
 class Desk
 {
 public:
-    Desk();
+    static Desk& GetInstanse();
+    Desk(const Desk&) = delete;
 
     void print(string desk[9][9]);
 
@@ -21,6 +22,9 @@ public:
     std::string PritebleDesk[9][9];
 
 private:
+    static Desk instanse;
+    Desk();
+    
     PieceManager _pieceManager;
 
 

@@ -50,42 +50,42 @@ std::unordered_map<PieceList, std::vector<MoveType>> PieceManager::buildPieceMov
 
 void PieceManager::placeStarterPieceOnDesk(std::unordered_map<std::string, Piece*>& mp)
 {
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(1, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(2, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(3, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(4, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(5, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(6, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(7, 2)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(8, 2)));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(1, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(2, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(3, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(4, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(5, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(6, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(7, 2), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::Black, Location(8, 2), true));
 
-	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(1, 1)));
-	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(2, 1)));
-	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::Black, Location(3, 1)));
-	mp.emplace(generateRandomString(), new King(PieceList::King, Color::Black, Location(4, 1)));
-	mp.emplace(generateRandomString(), new Queen(PieceList::Queen, Color::Black, Location(5, 1)));
-	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::Black, Location(6, 1)));
-	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(7, 1)));
-	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(8, 1)));
+	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(1, 1), true));
+	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(2, 1), true));
+	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::Black, Location(3, 1), true));
+	mp.emplace(generateRandomString(), new King(PieceList::King, Color::Black, Location(4, 1), true));
+	mp.emplace(generateRandomString(), new Queen(PieceList::Queen, Color::Black, Location(5, 1), true));
+	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::Black, Location(6, 1), true));
+	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::Black, Location(7, 1), true));
+	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::Black, Location(8, 1), true));
 
 
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(1, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(2, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(3, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(4, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(5, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(6, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(7, 7)));
-	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(8, 7)));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(1, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(2, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(3, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(4, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(5, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(6, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(7, 7), true));
+	mp.emplace(generateRandomString(), new Pawn(PieceList::Pawn, Color::White, Location(8, 7), true));
 
-	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::White, Location(1, 8)));
-	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::White, Location(2, 8)));
-	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::White, Location(3, 8)));
-	mp.emplace(generateRandomString(), new King(PieceList::King, Color::White, Location(4, 8)));
-	mp.emplace(generateRandomString(), new Queen(PieceList::Queen, Color::White, Location(5, 8)));
-	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::White, Location(6, 8)));
-	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::White, Location(7, 8)));
-	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::White, Location(8, 8)));
+	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::White, Location(1, 8), true));
+	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::White, Location(2, 8), true));
+	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::White, Location(3, 8), true));
+	mp.emplace(generateRandomString(), new King(PieceList::King, Color::White, Location(4, 8), true));
+	mp.emplace(generateRandomString(), new Queen(PieceList::Queen, Color::White, Location(5, 8), true));
+	mp.emplace(generateRandomString(), new Bishop(PieceList::Bishop, Color::White, Location(6, 8), true));
+	mp.emplace(generateRandomString(), new Knight(PieceList::Knight, Color::White, Location(7, 8), true));
+	mp.emplace(generateRandomString(), new Rook(PieceList::Rook, Color::White, Location(8, 8), true));
 }
 std::unordered_map<std::string, Piece*> PieceManager::placeStarterPieceOnDesk()
 {
@@ -123,5 +123,5 @@ std::string PieceManager::generateRandomString()
 template <typename T>
 T PieceManager::getPieceFromLocation(Location loc)
 {
-	return Pawn(PieceList::Pawn, Color::White, Location(8, 8));
+	return Pawn(PieceList::Pawn, Color::White, Location(8, 8), true);
 }
