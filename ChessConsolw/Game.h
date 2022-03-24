@@ -21,6 +21,8 @@ private:
 	GameLogic* _gameLogic = new GameLogic();
 	CommandRemouter* _commandRemouter = new CommandRemouter();
 
+	void initialise();
 	void runGameLoop();
+	void updatePrintebleDesk();
 };
 

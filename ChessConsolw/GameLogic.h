@@ -4,6 +4,7 @@
 #include "Desk.h"
 #include "PieceManager.h"
 #include "EmptyPiece.hpp"
+#include "Console.h"
 
 #include <iostream>
 

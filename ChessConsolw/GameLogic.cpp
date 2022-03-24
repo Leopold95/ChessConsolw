@@ -18,21 +18,22 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 			if (item.second->CurrentColor() == Color::White)
 			{
 				std::cout << "Союзнаа фигура есть" << std::endl;
+
+				item.second->CurrentLocation() = loc1;
 			}
 			else
 			{
-				throw new std::exception("союзной фигуры нету в этом месте ");
+				std::cout << "союзной фигуры нету в этом месте " << std::endl;
 			}
 		}
 
 				
 
-		if (item.second->CurrentLocation() == loc2)
-			if (item.second->CurrentColor() == Color::Black) //вражеская фигур есть
-			{
-				Piece& p = getPieceFromLocation(loc2);
-				killPiece(p);
-			}
+		//if (item.second->CurrentLocation() == loc2)
+		//	if (item.second->CurrentColor() == Color::Black) //вражеская фигур есть
+		//	{
+		//		killPiece(getPieceFromLocation(loc2));
+		//	}
 	}
 }
 

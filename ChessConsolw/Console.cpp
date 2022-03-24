@@ -5,6 +5,7 @@ void Console::println(std::string s)
 	std::cout << s << std::endl;
 }
 
+
 void Console::print()
 {
 }

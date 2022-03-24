@@ -27,8 +27,8 @@ private:
     
     PieceManager _pieceManager;
 
-
-    std::string _fullyCrearPritrbleDesk[9][9]
+public:
+    const std::string _fullyCrearPritrbleDesk[9][9]
     {
     {" ", "1", "2", "3", "4", "5", "6", "7", "8"},
     { "1", "", "", "", "", "", "", "", "" },
@@ -41,7 +41,7 @@ private:
     { "8", "", "", "", "", "", "", "", "" },
     };
 
-    std::string _blackWhitePritebleDesk[9][9] =
+    const std::string _blackWhitePritebleDesk[9][9] =
     {
     {" ", "À", "Á", "Â", "Ã", "Ä", "E", "¨", "Æ"},
     {"1", " ", "·", " ", "·", " ", "·", " ", "·"},
@@ -54,7 +54,7 @@ private:
     {"8", "·", " ", "·", " ", "·", " ", "·", " "},
     };
 
-    std::string deskWithdDfaultPieces[9][9] =
+    const std::string deskWithdDfaultPieces[9][9] =
     {
     {" ", "À", "Á", "Â", "Ã", "Ä", "E", "¨", "Æ"},
     {"1", "r", "k", "b", "K", "Q", "b", "k", "r"},

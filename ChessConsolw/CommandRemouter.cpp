@@ -21,6 +21,6 @@ void CommandRemouter::onNewCommandArgs(vecstr& args)
 		int p3 = atoi(coords2[0].c_str());
 		int p4 = atoi(coords2[1].c_str());
 
-		_gameLogic.tryMovePiece(Location(p1, p2), Location(p3, p4));		
+		_gameLogic.tryMovePiece(Location(p2, p1), Location(p4, p3));		
 	}
 }
