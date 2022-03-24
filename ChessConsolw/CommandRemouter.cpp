@@ -1,74 +1,26 @@
 #include "CommandRemouter.h"
 
-void CommandRemouter::onNewCommand(short c)
-{
-	switch (c)
-	{
-	case 8:
-		break;
-
-	default:
-		std::cout << "Taкой комнды не сущесвует." << std::endl;
-		std::cout << "Вы ввыелии: " << c << std::endl;
-		break;
-	}
-}
-
-void CommandRemouter::onNewCommand(std::string c)
-{
-	std::cout << c << std::endl;
-}
-
 void CommandRemouter::onNewCommandArgs(vecstr& args)
 {
 	if (boost::algorithm::iequals(args[0], "move"))
 	{
+		//move 1-1 2-4
 		string firstPos = args[1];
 		string secondPos = args[2];
 
+		vecstr coords1;
+		vecstr coords2;
 
-		
+		split(coords1, firstPos, boost::is_any_of("-"));
+		split(coords2, secondPos, boost::is_any_of("-"));
+
+
+		int p1 = atoi(coords1[0].c_str());
+		int p2 = atoi(coords1[1].c_str());
+
+		int p3 = atoi(coords2[0].c_str());
+		int p4 = atoi(coords2[1].c_str());
+
+		_gameLogic.tryMovePiece(Location(p1, p2), Location(p3, p4));		
 	}
-}
-
-void CommandRemouter::clearConsole()
-{
-	std::system("CLS");
-}
-
-void CommandRemouter::printCommands()
-{
-	print("Вы попали в хуяхматы. Удалите их обратно. пж");
-	print("0 - ход пешкой вверх");
-	print("1 - Правила");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-	print("");
-}
-
-void CommandRemouter::print(string s)
-{
-	std::cout << s << std::endl;
-}
-
-void CommandRemouter::printPiece(PieceList p)
-{
-	std::cout << (char)p << std::endl;
-}
-
-
-
-void CommandRemouter::printRules()
-{
-	print("Сделать ход:");
-	print("move <положение союзной фигуры> <положение вражеской фигуры>");
-	print("положения указывать в формате А-1, Г-6....");
 }
