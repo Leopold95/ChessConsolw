@@ -18,7 +18,7 @@ public:
 
     void print(string desk[9][9]);
 
-    std::unordered_map<std::string, Piece*> Pieces = _pieceManager.placeStarterPieceOnDesk();
+    std::unordered_map<std::string, Piece*> Pieces;
     std::string PritebleDesk[9][9];
 
 private:
@@ -28,6 +28,8 @@ private:
     PieceManager _pieceManager;
 
 public:
+    const std::unordered_map<std::string, Piece*> DefaultPieces = _pieceManager.placeStarterPieceOnDesk();
+
     const std::string _fullyCrearPritrbleDesk[9][9]
     {
     {" ", "1", "2", "3", "4", "5", "6", "7", "8"},

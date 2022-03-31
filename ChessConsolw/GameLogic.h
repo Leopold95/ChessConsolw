@@ -7,6 +7,9 @@
 #include "Console.h"
 
 #include <iostream>
+#include <string>
+
+using std::string;
 
 class GameLogic
 {
@@ -20,5 +23,9 @@ public:
 private:
 	PieceManager pieceManager;
 
+
+	//Piece* pieceToMove;
+
 	Piece& getPieceFromLocation(Location loc);
+	void movePiece(string idWhoMove, Location placeToMove);
 };
