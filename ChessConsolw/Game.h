@@ -13,6 +13,8 @@ public:
 	void startNewGame();
 	void endCurrentGame();
 
+	bool isGameRunning;
+
 	~Game();
 
 private:

@@ -11,7 +11,6 @@ GameLogic::GameLogic(PieceManager& pieceManager)
 
 void GameLogic::tryMovePiece(Location loc1, Location loc2)
 {
-	Location locToMove;
 	string id;
 
 	//работаем с первым положением фигуры 
@@ -19,38 +18,58 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 	{
 		if (item.second->CurrentLocation() == loc1) 
 		{
-			if (item.second->CurrentColor() == Color::White)
+			if (item.second->CurrentColor() == Color::White) //—оюзнаа фигура есть
 			{
-				std::cout << "—оюзнаа фигура есть" << std::endl;
 				id = item.first;
 				break;
 			}
 		}
 	}
 
+	bool isFree = false;
 	//проверка второго положени€ 
 	for (const auto& item : Desk::GetInstanse().Pieces)
 	{
-		if (item.second->CurrentLocation() != loc2) continue;
-		else std::cout << "¬о втором месте етсь фигура" << std::endl;
+		if (item.second->CurrentLocation() != loc2) //нету фигуры
+			isFree = true;
+		else //фигура обнаружена
+			isFree = false;
 	}
 
-	//перемещение фигуры
-	std::cout << "фигура перемещена" << std::endl;
-	Desk::GetInstanse().Pieces[id]->CurrentLocation() = loc2;
 
-	for (const auto& item : Desk::GetInstanse().Pieces)
-	{
-		if (item.second->CurrentLocation() == loc2)
-		{
-			std::cout << "положение фигуры изменено 1  " << item.first << std::endl;
-		}
+	//работаем с типом фигуры полученным из ее положени€
+	switch (getPieceByLocation(loc1))
+	{		
+	case PieceList::Pawn:
+		if(_movesCalcer.canPawnMoveTo(loc1, loc2))
+			movePiece(id, loc2);
+		break;
 
-		if (item.first == id)
-		{
-			std::cout << "положение фигуры изменено 2  " << item.first << std::endl;
-		}
+	case PieceList::King:
+		if (_movesCalcer.canKingMoveTo(loc1, loc2))
+			movePiece(id, loc2);
+		break;
+
+	case PieceList::Queen:
+		break;
+
+	case PieceList::Rook:
+		if (_movesCalcer.canRookMoveTo(loc1, loc2))
+			movePiece(id, loc2);
+		break;
+
+	case PieceList::Knight:
+		break;
+
+	case PieceList::Bishop:
+		break;
+
+	default:
+		break;
 	}
+
+	//if (isFree) movePiece(id, loc2);
+	//else movePieceToKill(id, loc2);
 }
 
 void GameLogic::killPiece(Piece& piece)
@@ -58,27 +77,29 @@ void GameLogic::killPiece(Piece& piece)
 	piece.Kill();
 }
 
-Piece& GameLogic::getPieceFromLocation(Location loc)
+void GameLogic::movePiece(string idWhoMove, Location& placeToMove)
 {
-	for (auto& item : Desk::GetInstanse().Pieces)
-	{
-		if (item.second->CurrentLocation() == loc)
-		{
-			return *item.second;
-		}		
-	}
-
-	throw new std::exception("didnt find any valid location");
-
-	Pawn p = Pawn(PieceList::None, Color::None, Location(), false);
-
-	return p; 
+	getPieceById(idWhoMove)->CurrentLocation() = placeToMove;
 }
 
-void GameLogic::movePiece(string idWhoMove, Location placeToMove)
+void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
+{
+	Piece* piece = getPieceById(idWhoMove);
+
+
+}
+
+Piece* GameLogic::getPieceById(string id)
+{
+	return Desk::GetInstanse().Pieces[id];
+}
+
+PieceList GameLogic::getPieceByLocation(Location loc)
 {
 	for (auto& item : Desk::GetInstanse().Pieces)
-		if (item.first == idWhoMove)
-			item.second->CurrentLocation() = placeToMove;
+		if (item.second->CurrentLocation() == loc)
+			return item.second->CurrentPiece();
+
+	return PieceList::None;
 }
 

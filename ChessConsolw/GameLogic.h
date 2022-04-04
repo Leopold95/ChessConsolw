@@ -5,6 +5,8 @@
 #include "PieceManager.h"
 #include "EmptyPiece.hpp"
 #include "Console.h"
+#include "MovesCalculator.h"
+#include "Pieces.hpp"
 
 #include <iostream>
 #include <string>
@@ -22,10 +24,10 @@ public:
 
 private:
 	PieceManager pieceManager;
+	MovesCalculator _movesCalcer;
 
-
-	//Piece* pieceToMove;
-
-	Piece& getPieceFromLocation(Location loc);
-	void movePiece(string idWhoMove, Location placeToMove);
+	void movePiece(string idWhoMove, Location& placeToMove);
+	void movePieceToKill(string idWhoMove, Location& placeToMove);
+	Piece* getPieceById(string id);
+	PieceList getPieceByLocation(Location loc);
 };

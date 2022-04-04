@@ -11,12 +11,15 @@ void Game::startNewGame()
 {
 	initialise();
 
+	isGameRunning = true;
+
 	runGameLoop();
 }
 
 void Game::endCurrentGame()
 {
 	system("CLS");
+	isGameRunning = false;
 }
 
 void Game::initialise()
@@ -41,15 +44,11 @@ void Game::initialise()
 
 void Game::updatePrintebleDesk()
 {
-	//заполнение доски пустотой
-	for (const auto& piece : _desk.Pieces)
-	{
-		int x = piece.second->CurrentLocation().x;
-		int y = piece.second->CurrentLocation().y;
-
-		_desk.PritebleDesk[y][x] = " ";
-	}
-		
+	//очищение доски
+	for (size_t i = 1; i <= 8; i++)
+		for (size_t j = 1; j <= 8; j++)
+			_desk.PritebleDesk[j][i] = " ";
+	
 	//перезаполнение доски для вывода из текущей карты фигур на доске
 	for (const auto& piece : _desk.Pieces)
 	{
@@ -71,5 +70,4 @@ void Game::runGameLoop()
 	updatePrintebleDesk();
 
 	_desk.print(_desk.PritebleDesk);
-
 }

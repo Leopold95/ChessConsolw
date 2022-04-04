@@ -4,11 +4,11 @@
 
 class EmptyPiece : public Piece
 {
-	PieceList CurrentPiece() override
+	PieceList& CurrentPiece() override
 	{
 	}
 
-	Location CurrentLocation() override
+	Location& CurrentLocation() override
 	{
 	}
 

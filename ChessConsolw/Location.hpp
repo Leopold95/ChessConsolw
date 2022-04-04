@@ -1,6 +1,7 @@
 #pragma once
 
 #include <exception>
+#include "BugLogger.h"
 
 struct Location
 {
@@ -9,8 +10,10 @@ public:
 
 	Location(int xx, int yy)
 	{
-		if (xx < 1 || xx > 8) throw new std::exception("x is not valid");
-		if (yy < 1 || yy > 8) throw new std::exception("y is not valid");
+		if (xx < 1) xx = 1;
+		if (xx > 8) xx = 8;
+		if (yy < 1) yy = 1;
+		if (yy > 8) yy = 8;
 
 		x = xx;
 		y = yy;

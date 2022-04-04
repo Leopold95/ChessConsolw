@@ -15,12 +15,12 @@ public:
 
 
 
-	PieceList CurrentPiece() override
+	PieceList& CurrentPiece() override
 	{
 		return piece;
 	}
 
-	Location CurrentLocation() override
+	Location& CurrentLocation() override
 	{
 		return location;
 	}
