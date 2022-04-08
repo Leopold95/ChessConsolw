@@ -2,9 +2,6 @@
 
 Game::~Game()
 {
-	delete _pieceManager;
-	delete _gameLogic;
-	delete _commandRemouter;
 }
 
 void Game::startNewGame()
@@ -64,8 +61,8 @@ void Game::runGameLoop()
 {
 	_desk.print(_desk.PritebleDesk);
 
-	std::vector<std::string> args = Console::getConsoleArgs();
-	_commandRemouter->onNewCommandArgs(args);
+	std::vector<std::string> args = ConsolePromoute::Console::getConsoleArgs();
+	_commandRemouter.onNewCommandArgs(args);
 
 	updatePrintebleDesk();
 

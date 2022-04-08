@@ -22,6 +22,5 @@ private:
 	const int firstPawnPos = 7;
 	const int boardLimitFrom = 1;
 	const int boardLimitTo = 8;
-
 };
 

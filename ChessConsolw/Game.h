@@ -19,9 +19,9 @@ public:
 
 private:
 	Desk& _desk = Desk::GetInstanse();
-	PieceManager* _pieceManager = new PieceManager();
-	GameLogic* _gameLogic = new GameLogic();
-	CommandRemouter* _commandRemouter = new CommandRemouter();
+	PieceManager _pieceManager;
+	GameLogic _gameLogic;
+	CommandRemouter _commandRemouter;
 
 	void initialise();
 	void runGameLoop();

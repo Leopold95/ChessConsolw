@@ -10,6 +10,7 @@ public:
 
 	Location(int xx, int yy)
 	{
+
 		if (xx < 1) xx = 1;
 		if (xx > 8) xx = 8;
 		if (yy < 1) yy = 1;

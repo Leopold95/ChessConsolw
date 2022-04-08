@@ -1,16 +1,35 @@
 #include "Console.h"
 
-void Console::println(std::string s)
+void ConsolePromoute::Console::println(std::string s)
 {
 	std::cout << s << std::endl;
 }
 
 
-void Console::print()
+void ConsolePromoute::Console::print()
 {
 }
 
-std::vector<std::string> Console::getConsoleArgs()
+void ConsolePromoute::Console::print(std::string s, Color c)
+{
+	switch (c)
+	{
+	case ConsolePromoute::Color::WHITE:
+		system("Color " + (char)c);
+		std::cout << s.c_str();
+		break;
+	case ConsolePromoute::Color::LIGHTBLUE:
+		break;
+	case ConsolePromoute::Color::RED:
+		break;
+	default:
+		break;
+	}
+
+	system("Color 7");
+}
+
+std::vector<std::string> ConsolePromoute::Console::getConsoleArgs()
 {
 	const char* str;
 	std::string n = "";

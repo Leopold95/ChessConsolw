@@ -7,8 +7,10 @@
 #include "Piece.hpp"
 #include "SystemVariables.h"
 #include "PieceManager.h"
+#include "Console.h"
 
 using std::string;
+using ConsolePromoute::Console;
 
 class Desk
 {

@@ -3,12 +3,23 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-class Console
+namespace ConsolePromoute
 {
-public:
-	static void println(std::string);
-	static void print();
-	static std::vector<std::string> getConsoleArgs();
+	enum class Color : char
+	{
+		WHITE = 7,
+		LIGHTBLUE = 9,
+		RED = 4
+	};
+
+	class Console
+	{
+	public:
+		static void println(std::string);
+		static void print();
+		static void print(std::string, Color);
+		static std::vector<std::string> getConsoleArgs();
+	};
 };
+
 
