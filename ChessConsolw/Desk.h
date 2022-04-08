@@ -9,6 +9,7 @@
 #include "PieceManager.h"
 #include "Console.h"
 
+
 using std::string;
 using ConsolePromoute::Console;
 
