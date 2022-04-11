@@ -23,6 +23,7 @@ public:
 
     std::unordered_map<std::string, Piece*> Pieces;
     std::string PritebleDesk[9][9];
+    std::string PiecesOnPritebleDesk_mask[8][8];
 
 private:
     static Desk instanse;

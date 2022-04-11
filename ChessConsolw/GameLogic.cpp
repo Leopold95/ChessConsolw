@@ -26,15 +26,12 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 		}
 	}
 
-	bool isFree = false;
+
 	//проверка второго положения 
-	for (const auto& item : Desk::GetInstanse().Pieces)
-	{
-		if (item.second->CurrentLocation() != loc2) //нету фигуры
-			isFree = true;
-		else //фигура обнаружена
-			isFree = false;
-	}
+	if (isCellEmpty(loc2))
+		makeMove();
+	else
+		makeKill();
 
 
 	//работаем с типом фигуры полученным из ее положения
@@ -42,12 +39,12 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 	{		
 	case PieceList::Pawn:
 		if(_movesCalcer.canPawnMoveTo(loc1, loc2))
-			movePiece(id, loc2);
+			makeMove(id, loc2);
 		break;
 
 	case PieceList::King:
 		if (_movesCalcer.canKingMoveTo(loc1, loc2))
-			movePiece(id, loc2);
+			makeMove(id, loc2);
 		break;
 
 	case PieceList::Queen:
@@ -55,7 +52,7 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 
 	case PieceList::Rook:
 		if (_movesCalcer.canRookMoveTo(loc1, loc2))
-			movePiece(id, loc2);
+			makeMove(id, loc2);
 		break;
 
 	case PieceList::Knight:
@@ -77,8 +74,10 @@ void GameLogic::killPiece(Piece& piece)
 	piece.Kill();
 }
 
-void GameLogic::movePiece(string idWhoMove, Location& placeToMove)
+void GameLogic::makeMove(string idWhoMove, Location& placeToMove)
 {
+	Location loc = Desk::GetInstanse().Pieces.at(idWhoMove)->CurrentLocation();
+
 	getPieceById(idWhoMove)->CurrentLocation() = placeToMove;
 }
 
@@ -87,6 +86,14 @@ void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
 	Piece* piece = getPieceById(idWhoMove);
 
 
+}
+
+bool GameLogic::isCellEmpty(const Location& loc)
+{
+	if(_desk.PiecesOnPritebleDesk_mask[loc.y][loc.x] == occupiedCell)
+		return false;
+
+	return true;
 }
 
 Piece* GameLogic::getPieceById(string id)

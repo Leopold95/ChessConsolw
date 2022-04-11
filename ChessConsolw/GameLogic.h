@@ -25,9 +25,14 @@ public:
 private:
 	PieceManager pieceManager;
 	MovesCalculator _movesCalcer;
+	Desk& _desk = Desk::GetInstanse();
 
-	void movePiece(string idWhoMove, Location& placeToMove);
+	void makeMove(string idWhoMove, Location& placeToMove);
 	void movePieceToKill(string idWhoMove, Location& placeToMove);
+	bool isCellEmpty(const Location& loc);
 	Piece* getPieceById(string id);
 	PieceList getPieceByLocation(Location loc);
+
+	const std::string freeCell = " ";
+	const std::string occupiedCell = "1";
 };

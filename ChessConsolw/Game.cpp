@@ -41,19 +41,35 @@ void Game::initialise()
 
 void Game::updatePrintebleDesk()
 {
-	//очищение доски
-	for (size_t i = 1; i <= 8; i++)
+	//очистка игровой доски
+	for (size_t i = 1; i <= 8; i++) 
 		for (size_t j = 1; j <= 8; j++)
-			_desk.PritebleDesk[j][i] = " ";
+			_desk.PritebleDesk[j][i] = " "; 
+
+	//очиска маски с фигурами
+	for (size_t i = 0; i < 8; i++)
+		for (size_t j = 0; j < 8; j++)
+			_desk.PiecesOnPritebleDesk_mask[j][i] = " "; 
+
 	
 	//перезаполнение доски для вывода из текущей карты фигур на доске
 	for (const auto& piece : _desk.Pieces)
 	{
-		int x = piece.second->CurrentLocation().x;
-		int y = piece.second->CurrentLocation().y;
+		short x = piece.second->CurrentLocation().x;
+		short y = piece.second->CurrentLocation().y;
 
 		if(piece.second->IsAlive())
 			_desk.PritebleDesk[y][x] = (char)piece.second->CurrentPiece();
+	}
+
+	//запление маски с фигурами 
+	for (const auto& item : _desk.Pieces)
+	{
+		short x = item.second->CurrentLocation().x;
+		short y = item.second->CurrentLocation().y;
+
+		if (item.second->IsAlive())
+			_desk.PiecesOnPritebleDesk_mask[y - 1][x - 1] = "1";
 	}
 }
 
