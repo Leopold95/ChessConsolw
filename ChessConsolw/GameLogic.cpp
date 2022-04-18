@@ -90,7 +90,7 @@ void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
 
 bool GameLogic::isCellEmpty(const Location& loc)
 {
-	if(_desk.PiecesOnPritebleDesk_mask[loc.y][loc.x] == occupiedCell)
+	if(_desk.PiecesOnPritebleDesk_mask[loc.y][loc.x] == CELL_OCCUPIED)
 		return false;
 
 	return true;

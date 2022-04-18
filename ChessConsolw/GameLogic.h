@@ -33,6 +33,6 @@ private:
 	Piece* getPieceById(string id);
 	PieceList getPieceByLocation(Location loc);
 
-	const std::string freeCell = " ";
-	const std::string occupiedCell = "1";
+	const std::string CELL_FREE = " ";
+	const std::string CELL_OCCUPIED = "1";
 };

@@ -37,7 +37,7 @@ vector<Location> MovesCalculator::pawnMoves(const Location& currentLocation)
 
 	//is first move
 	bool firstMove = false;
-		if (currentLocation.y == firstPawnPos) //piece is on first place
+		if (currentLocation.y == FIRST_PAWN_POS) //piece is on first place
 			firstMove = true;
 
 	if (firstMove)
@@ -60,7 +60,7 @@ vector<Location> MovesCalculator::rookMoves(const Location& currentLocation)
 {
 	vector<Location> temp;
 
-	for (size_t i = boardLimitFrom; i <= boardLimitTo; i++) 
+	for (size_t i = BOARD_LIMIT_FROM; i <= BOARD_LIMIT_TO; i++) 
 	{
 		temp.push_back(Location(currentLocation.x, currentLocation.y - i));
 		temp.push_back(Location(currentLocation.x, currentLocation.y + i));

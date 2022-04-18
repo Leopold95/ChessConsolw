@@ -19,8 +19,8 @@ private:
 	vector<Location> rookMoves(const Location& currentLocation);
 	vector<Location> kingMoves(const Location& currentLocation);
 
-	const int firstPawnPos = 7;
-	const int boardLimitFrom = 1;
-	const int boardLimitTo = 8;
+	const int FIRST_PAWN_POS = 7;
+	const int BOARD_LIMIT_FROM = 1;
+	const int BOARD_LIMIT_TO = 8;
 };
 
