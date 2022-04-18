@@ -2,23 +2,6 @@
 
 MovesCalculator::MovesCalculator()
 {
-	//pawnFirstMoves.push_back(Location(1, 7));
-	//pawnFirstMoves.push_back(Location(2, 7));
-	//pawnFirstMoves.push_back(Location(3, 7));
-	//pawnFirstMoves.push_back(Location(4, 7));
-	//pawnFirstMoves.push_back(Location(5, 7));
-	//pawnFirstMoves.push_back(Location(6, 7));
-	//pawnFirstMoves.push_back(Location(7, 7));
-	//pawnFirstMoves.push_back(Location(8, 7));
-
-	//pawnFirstMoves.push_back(Location(1, 2));
-	//pawnFirstMoves.push_back(Location(2, 2));
-	//pawnFirstMoves.push_back(Location(3, 2));
-	//pawnFirstMoves.push_back(Location(4, 2));
-	//pawnFirstMoves.push_back(Location(5, 2));
-	//pawnFirstMoves.push_back(Location(6, 2));
-	//pawnFirstMoves.push_back(Location(7, 2));
-	//pawnFirstMoves.push_back(Location(8, 2));
 }
 
 bool MovesCalculator::canPawnMoveTo(const Location& fromLocation, Location toLocation)
