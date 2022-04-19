@@ -29,7 +29,7 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 
 	//проверка второго положения 
 	if (isCellEmpty(loc2))
-		makeMove();
+		makeMove(,);
 	else
 		makeKill();
 
@@ -103,9 +103,9 @@ Piece* GameLogic::getPieceById(string id)
 
 PieceList GameLogic::getPieceByLocation(Location loc)
 {
-	for (auto& item : Desk::GetInstanse().Pieces)
-		if (item.second->CurrentLocation() == loc)
-			return item.second->CurrentPiece();
+	for (auto&[id, piece] : Desk::GetInstanse().Pieces)
+		if (piece->CurrentLocation() == loc)
+			return piece->CurrentPiece();
 
 	return PieceList::None;
 }

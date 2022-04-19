@@ -60,7 +60,7 @@ vector<Location> MovesCalculator::rookMoves(const Location& currentLocation)
 {
 	vector<Location> temp;
 
-	for (size_t i = BOARD_LIMIT_FROM; i <= BOARD_LIMIT_TO; i++) 
+	for (int i = BOARD_LIMIT_FROM; i <= BOARD_LIMIT_TO; i++) 
 	{
 		temp.push_back(Location(currentLocation.x, currentLocation.y - i));
 		temp.push_back(Location(currentLocation.x, currentLocation.y + i));

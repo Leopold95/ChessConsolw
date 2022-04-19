@@ -30,12 +30,12 @@ void Game::initialise()
 	_desk.Pieces = _desk.DefaultPieces;
 
 	//заполенеие доски для вывода из стандартного шаблона
-	for (const auto& piece : _desk.DefaultPieces)
+	for (const auto&[id, piece] : _desk.DefaultPieces)
 	{
-		int x = piece.second->CurrentLocation().x;
-		int y = piece.second->CurrentLocation().y;
+		int x = piece->CurrentLocation().x;
+		int y = piece->CurrentLocation().y;
 
-		_desk.PritebleDesk[y][x] = (char)piece.second->CurrentPiece();
+		_desk.PritebleDesk[y][x] = (char)piece->CurrentPiece();
 	}
 }
 
@@ -53,22 +53,22 @@ void Game::updatePrintebleDesk()
 
 	
 	//перезаполнение доски для вывода из текущей карты фигур на доске
-	for (const auto& piece : _desk.Pieces)
+	for (const auto&[id, piece] : _desk.Pieces)
 	{
-		short x = piece.second->CurrentLocation().x;
-		short y = piece.second->CurrentLocation().y;
+		short x = piece->CurrentLocation().x;
+		short y = piece->CurrentLocation().y;
 
-		if(piece.second->IsAlive())
-			_desk.PritebleDesk[y][x] = (char)piece.second->CurrentPiece();
+		if(piece->IsAlive())
+			_desk.PritebleDesk[y][x] = (char)piece->CurrentPiece();
 	}
 
 	//запление маски с фигурами 
-	for (const auto& item : _desk.Pieces)
+	for (const auto&[id, piece] : _desk.Pieces)
 	{
-		short x = item.second->CurrentLocation().x;
-		short y = item.second->CurrentLocation().y;
+		short x = piece->CurrentLocation().x;
+		short y = piece->CurrentLocation().y;
 
-		if (item.second->IsAlive())
+		if (piece->IsAlive())
 			_desk.PiecesOnPritebleDesk_mask[y - 1][x - 1] = "1";
 	}
 }
