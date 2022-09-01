@@ -28,10 +28,10 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 
 
 	//проверка второго положения 
-	if (isCellEmpty(loc2))
-		makeMove(,);
-	else
-		makeKill();
+	//if (isCellEmpty(loc2))
+		//makeMove(,);
+	//else
+		//makeKill();
 
 
 	//работаем с типом фигуры полученным из ее положения

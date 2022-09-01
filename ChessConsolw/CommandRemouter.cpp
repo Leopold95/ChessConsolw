@@ -2,43 +2,73 @@
 
 CommandRemouter::CommandRemouter()
 {
-	for (auto item : valid_words)
-		for (auto item1 : valid_nums)
-			valid_poses.push_back(item + item1);
+	//genering list of valid pieses' poses
+	for (auto item : VALID_NUMS)
+		for (auto item1 : VALID_LETTERS)
+			valid_poses.push_back(item + "-" + item1);
 }
 
 void CommandRemouter::onNewCommandArgs(vecstr& args)
 {
-	if (boost::algorithm::iequals(args[0], "move"))
+	if (iequals(args[0], "move"))
 	{
-		string moveString = args[1];
-		vecstr coords = split(coords, moveString, boost::is_any_of("-"));
-		//D4-D7
-		short is = 0;
-		for (const auto& item : valid_poses)
-		{
-			if (coords[0] == item) is++;
-		}
+		//move A-1 B-2
 
-
-
-		//move 1-1 2-4
 		string firstPos = args[1];
 		string secondPos = args[2];
 
-		vecstr coords1 = split(coords1, firstPos, boost::is_any_of("-"));
-		vecstr coords2 = split(coords2, secondPos, boost::is_any_of("-"));
+		_logger->Write(firstPos + " " + secondPos);
+
+		vecstr splittedFirstPos = boost::split(splittedFirstPos, firstPos, boost::is_any_of("-"));
+		vecstr splittedSecondPos = boost::split(splittedSecondPos, secondPos, boost::is_any_of("-"));
 
 		
-		
+
+		if (isValidCommandSyntax(args[0], {args[1], args[2]}) == false)
+		{
+			_logger->Write("Command not valid");
+		}
+
+		try 
+		{
+			int p1 = std::stoi(splittedFirstPos.at(0));
+			int p2 = std::stoi(splittedFirstPos.at(1));
+
+			int p3 = std::stoi(splittedSecondPos.at(0));
+			int p4 = std::stoi(splittedSecondPos.at(1));
 
 
-		int p1 = atoi(coords1[0].c_str());
-		int p2 = atoi(coords1[1].c_str());
+			_gameLogic.tryMovePiece(Location(p2, p1), Location(p4, p3));
+		}
+		catch (std::exception& ex)
+		{
+			_logger->WriteFile("Error with converting command. Class: CommandRemouter. Error is: bad list index");
+		}
 
-		int p3 = atoi(coords2[0].c_str());
-		int p4 = atoi(coords2[1].c_str());
+			
 
-		_gameLogic.tryMovePiece(Location(p2, p1), Location(p4, p3));		
+		//if(!isValid("move", args[1]))	
 	}
+}
+
+void CommandRemouter::incorrectCommand()
+{
+	_logger->Write("This command is not correct.");
+}
+
+bool CommandRemouter::isValidCommandSyntax(string command, vecstr args)
+{
+	if (iequals("move", command) == false)
+	{
+		auto fistValid = std::find(valid_poses.begin(), valid_poses.end(), args[0]);
+		auto secondValid = std::find(valid_poses.begin(), valid_poses.end(), args[1]);
+
+		if (fistValid != valid_poses.end() && secondValid != valid_poses.end())
+			return true;
+		else
+			return false;
+	}
+	
+
+	return false;
 }

@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
 #include <random>
 #include <string>
 #include <vector>
@@ -10,7 +12,9 @@
 #include "Utils.hpp"
 #include "Game.h"
 
-#include <Windows.h>
+//#include <Windows.h>
+
+#include "Client.h"
 
 using std::string;
 using std::vector;
@@ -56,12 +60,11 @@ int main(int argc, char* argv[])
 
 	SystemVariables& sv = SystemVariables::GetInstanse();
 	
-
-
-
 	Game* game = new Game();
 	game->startNewGame();
 
+	//Client client("127.0.0.1", 25535);
+	//client.Connect();
 
 
 	delete game;
