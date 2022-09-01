@@ -77,7 +77,7 @@ void Game::runGameLoop()
 {
 	_desk.print(_desk.PritebleDesk);
 
-	_commandRemouter.handleNewCommand(args);
+	_commandRemouter.handleNewCommand();
 
 	updatePrintebleDesk();
 

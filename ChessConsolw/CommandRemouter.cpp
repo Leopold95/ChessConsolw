@@ -3,8 +3,8 @@
 CommandRemouter::CommandRemouter()
 {
 	//genering list of valid pieses' poses
-	for (auto item : VALID_NUMS)
-		for (auto item1 : VALID_LETTERS)
+	for (auto item : VALID_LETTERS)
+		for (auto item1 : VALID_NUMS)
 			valid_poses.push_back(item + "-" + item1);
 }
 
@@ -15,18 +15,16 @@ void CommandRemouter::handleNewCommand()
 	if (iequals(args[0], "move"))
 	{
 		//move A-1 B-2
+		const string& command = args[0];
+		const string& firstPos = args[1];
+		const string& secondPos = args[2];
 
-		string firstPos = args[1];
-		string secondPos = args[2];
-
-		_logger->Write(firstPos + " " + secondPos);
+		_logger.Write(firstPos + " " + secondPos);
 
 		vecstr splittedFirstPos = boost::split(splittedFirstPos, firstPos, boost::is_any_of("-"));
 		vecstr splittedSecondPos = boost::split(splittedSecondPos, secondPos, boost::is_any_of("-"));
 
-		
-
-		if (isValidCommandSyntax(args[0], {args[1], args[2]}) == false)
+		if (isValidCommandSyntax(command, {args[1], args[2]}) == false)
 		{
 			incorrectCommand();
 		}
@@ -44,7 +42,7 @@ void CommandRemouter::handleNewCommand()
 		}
 		catch (std::exception& ex)
 		{
-			_logger->WriteFile("Error with converting command. Class: CommandRemouter. Error is: bad list index");
+			_logger.WriteFile("Error with converting command. Class: CommandRemouter. Error is: bad list index");
 		}
 
 			
@@ -55,13 +53,13 @@ void CommandRemouter::handleNewCommand()
 
 void CommandRemouter::incorrectCommand()
 {
-	_logger->Write("This command is not correct.");
+	_logger.Write("This command is not correct.");
 	handleNewCommand();
 }
 
 bool CommandRemouter::isValidCommandSyntax(const string& command, vecstr args)
 {
-	if (iequals("move", command) == false)
+	if (iequals("move", command))
 	{
 		auto fistValid = std::find(valid_poses.begin(), valid_poses.end(), args[0]);
 		auto secondValid = std::find(valid_poses.begin(), valid_poses.end(), args[1]);

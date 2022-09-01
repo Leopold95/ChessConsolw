@@ -18,7 +18,6 @@ class CommandRemouter
 {
 public:
 	CommandRemouter();
-	~CommandRemouter();
 	void handleNewCommand();
 	GameLogic _gameLogic;
 
@@ -30,7 +29,6 @@ private:
 	bool isValidCommandSyntax(const string& command, vecstr args);
 
 	vecstr valid_poses;
-
-	Logger* _logger = new Logger();
+	Logger _logger;
 };
 

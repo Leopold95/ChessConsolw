@@ -38,7 +38,7 @@ std::vector<std::string> ConsolePromoute::Console::getConsoleArgs()
 
 	std::vector<std::string> args;
 
-	//код спизжен и не изетсно как работает но работает
+	//not own-writed code
 	do
 	{
 		const char* begin = str;

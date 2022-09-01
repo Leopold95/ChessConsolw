@@ -5,3 +5,4 @@ Something get wrong while connecting to local server. Src: Clent.hpp Connect(). 
 [2022-08-26 21:36:53.0745308] Something get wrong while connecting to local server. Src: Clent.hpp Connect(). Error is: connect: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение [system:10061 at C:\Users\Leopold95\Desktop\cpp progs\ChessConsolw\packages\boost.1.80.0\lib\native\include\boost\asio\detail\win_iocp_socket_service.hpp:632:5 in function 'connect']
 [2022-08-31 14:20:55.1535145] Error with converting command. Class: CommandRemouter. Error is: invalid vector subscript
 [2022-08-31 14:21:44.2540497] Error with converting command. Class: CommandRemouter. Error is: invalid vector subscript
+[2022-09-01 16:37:24.9749883] Error with converting command. Class: CommandRemouter. Error is: bad list index
