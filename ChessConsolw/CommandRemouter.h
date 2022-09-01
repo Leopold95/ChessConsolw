@@ -19,7 +19,7 @@ class CommandRemouter
 public:
 	CommandRemouter();
 	~CommandRemouter();
-	void onNewCommandArgs(vecstr& args);
+	void handleNewCommand();
 	GameLogic _gameLogic;
 
 private:
@@ -27,7 +27,7 @@ private:
 	const vecstr VALID_NUMS = {"1", "2", "3", "4", "5", "6", "7", "8"};
 
 	void incorrectCommand();
-	bool isValidCommandSyntax(string command, vecstr args);
+	bool isValidCommandSyntax(const string& command, vecstr args);
 
 	vecstr valid_poses;
 

@@ -77,8 +77,7 @@ void Game::runGameLoop()
 {
 	_desk.print(_desk.PritebleDesk);
 
-	std::vector<std::string> args = ConsolePromoute::Console::getConsoleArgs();
-	_commandRemouter.onNewCommandArgs(args);
+	_commandRemouter.handleNewCommand(args);
 
 	updatePrintebleDesk();
 

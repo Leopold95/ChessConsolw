@@ -8,8 +8,10 @@ CommandRemouter::CommandRemouter()
 			valid_poses.push_back(item + "-" + item1);
 }
 
-void CommandRemouter::onNewCommandArgs(vecstr& args)
+void CommandRemouter::handleNewCommand()
 {
+	std::vector<std::string> args = ConsolePromoute::Console::getConsoleArgs();
+
 	if (iequals(args[0], "move"))
 	{
 		//move A-1 B-2
@@ -26,7 +28,7 @@ void CommandRemouter::onNewCommandArgs(vecstr& args)
 
 		if (isValidCommandSyntax(args[0], {args[1], args[2]}) == false)
 		{
-			_logger->Write("Command not valid");
+			incorrectCommand();
 		}
 
 		try 
@@ -54,9 +56,10 @@ void CommandRemouter::onNewCommandArgs(vecstr& args)
 void CommandRemouter::incorrectCommand()
 {
 	_logger->Write("This command is not correct.");
+	handleNewCommand();
 }
 
-bool CommandRemouter::isValidCommandSyntax(string command, vecstr args)
+bool CommandRemouter::isValidCommandSyntax(const string& command, vecstr args)
 {
 	if (iequals("move", command) == false)
 	{
