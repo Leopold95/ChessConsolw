@@ -22,6 +22,15 @@
     <Filter Include="Network">
       <UniqueIdentifier>{9f2e50b4-04a1-4153-9985-62e6d029f634}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\Simple">
+      <UniqueIdentifier>{3478f294-3226-4f2c-9c1c-85d4a10f4f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Headers">
+      <UniqueIdentifier>{0f66ba1b-69fc-47ae-80b8-7c0bbffb7f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Src">
+      <UniqueIdentifier>{172845c3-7847-4c32-9e28-55eb2121e569}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChessConsole.cpp">
@@ -63,9 +72,6 @@
     <ClCompile Include="BugLogger.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SoundManager.hpp">
-      <Filter>System</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
@@ -76,12 +82,6 @@
     </ClInclude>
     <ClInclude Include="Pawn.hpp">
       <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Location.hpp">
-      <Filter>System</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.hpp">
-      <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="CommandRemouter.h">
       <Filter>Файлы заголовков</Filter>
@@ -101,17 +101,8 @@
     <ClInclude Include="Bishop.hpp">
       <Filter>ChessPiesces</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.hpp">
-      <Filter>System</Filter>
-    </ClInclude>
-    <ClInclude Include="PositionList.hpp">
-      <Filter>System</Filter>
-    </ClInclude>
     <ClInclude Include="SystemVariables.h">
       <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrorMessage.hpp">
-      <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="MoveType.hpp">
       <Filter>ChessPiesces</Filter>
@@ -140,8 +131,23 @@
     <ClInclude Include="BugLogger.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Color.hpp">
+      <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorMessage.hpp">
+      <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.hpp">
+      <Filter>System\Simple</Filter>
+    </ClInclude>
     <ClInclude Include="Logger.hpp">
-      <Filter>System</Filter>
+      <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionList.hpp">
+      <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.hpp">
+      <Filter>System\Simple</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

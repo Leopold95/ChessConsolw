@@ -179,7 +179,6 @@
     <ClCompile Include="MovesCalculator.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
-    <ClCompile Include="SoundManager.hpp" />
     <ClCompile Include="SystemVariables.cpp" />
   </ItemGroup>
   <ItemGroup>

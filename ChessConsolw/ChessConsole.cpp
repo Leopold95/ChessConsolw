@@ -15,8 +15,6 @@
 
 #include <Windows.h>
 
-
-
 using std::string;
 using std::vector;
 
