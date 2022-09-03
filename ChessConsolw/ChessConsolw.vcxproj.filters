@@ -69,8 +69,8 @@
     <ClCompile Include="MovesCalculator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BugLogger.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="SoundSystem.cpp">
+      <Filter>System\Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +128,6 @@
     <ClInclude Include="MovesCalculator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BugLogger.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Color.hpp">
       <Filter>System\Simple</Filter>
     </ClInclude>
@@ -148,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="Utils.hpp">
       <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSystem.h">
+      <Filter>System\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

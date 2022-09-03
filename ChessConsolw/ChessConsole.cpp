@@ -7,9 +7,12 @@
 #include <vector>
 #include <thread>
 
+#include "SoundSystem.h"
+#include <SFML/Audio.hpp>
+
 #include "SystemVariables.h"
-#include "Desk.h"
 #include "CommandRemouter.h"
+#include "Desk.h"
 #include "Utils.hpp"
 #include "Game.h"
 
@@ -62,7 +65,16 @@ int main(int argc, char* argv[])
 	SystemVariables& sv = SystemVariables::GetInstanse();
 	
 	Game* game = new Game();
-	game->startNewGame();
+
+	SoundSystem* ss = new SoundSystem();
+	ss->play("Assets/Sounds/piecemoved.wav");
+
+
+
+	std::cin.get();
+
+
+	//game->startNewGame();
 
 
 

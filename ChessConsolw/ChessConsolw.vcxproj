@@ -167,7 +167,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BugLogger.cpp" />
     <ClCompile Include="ChessConsole.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CommandRemouter.cpp" />
@@ -179,11 +178,11 @@
     <ClCompile Include="MovesCalculator.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
+    <ClCompile Include="SoundSystem.cpp" />
     <ClCompile Include="SystemVariables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bishop.hpp" />
-    <ClInclude Include="BugLogger.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="CommandRemouter.h" />
@@ -205,6 +204,7 @@
     <ClInclude Include="PositionList.hpp" />
     <ClInclude Include="Queen.hpp" />
     <ClInclude Include="Rook.hpp" />
+    <ClInclude Include="SoundSystem.h" />
     <ClInclude Include="SystemVariables.h" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>

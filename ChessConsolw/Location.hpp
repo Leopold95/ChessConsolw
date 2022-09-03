@@ -1,7 +1,6 @@
 #pragma once
 
 #include <exception>
-#include "BugLogger.h"
 
 struct Location
 {
