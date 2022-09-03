@@ -19,6 +19,17 @@ public:
 		x = xx;
 		y = yy;
 	}
+	Location(short xx, short yy)
+	{
+
+		if (xx < 1) xx = 1;
+		if (xx > 8) xx = 8;
+		if (yy < 1) yy = 1;
+		if (yy > 8) yy = 8;
+
+		x = xx;
+		y = yy;
+	}
 
 	friend bool operator== (const Location& loc1, const Location& loc2)
 	{

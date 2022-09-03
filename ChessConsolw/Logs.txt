@@ -6,3 +6,5 @@ Something get wrong while connecting to local server. Src: Clent.hpp Connect(). 
 [2022-08-31 14:20:55.1535145] Error with converting command. Class: CommandRemouter. Error is: invalid vector subscript
 [2022-08-31 14:21:44.2540497] Error with converting command. Class: CommandRemouter. Error is: invalid vector subscript
 [2022-09-01 16:37:24.9749883] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-02 14:23:37.4197311] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-02 15:29:35.1851697] Error with converting command. Class: CommandRemouter. Error is: bad list index

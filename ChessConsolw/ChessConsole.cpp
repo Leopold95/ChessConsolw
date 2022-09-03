@@ -1,5 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 
+
 #include <iostream>
 #include <random>
 #include <string>
@@ -12,9 +13,9 @@
 #include "Utils.hpp"
 #include "Game.h"
 
-//#include <Windows.h>
+#include <Windows.h>
 
-#include "Client.h"
+
 
 using std::string;
 using std::vector;
@@ -33,6 +34,8 @@ void argumentChecker(int c, char* args[])
 	{
 		exit(3);
 	}
+
+	
 
 	if (args[0] == "")
 	{
@@ -62,6 +65,8 @@ int main(int argc, char* argv[])
 	
 	Game* game = new Game();
 	game->startNewGame();
+
+
 
 	//Client client("127.0.0.1", 25535);
 	//client.Connect();

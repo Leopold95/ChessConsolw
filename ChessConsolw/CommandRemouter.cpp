@@ -8,6 +8,10 @@ CommandRemouter::CommandRemouter()
 			valid_poses.push_back(item + "-" + item1);
 }
 
+CommandRemouter::~CommandRemouter()
+{
+}
+
 void CommandRemouter::handleNewCommand()
 {
 	std::vector<std::string> args = ConsolePromoute::Console::getConsoleArgs();
@@ -16,27 +20,20 @@ void CommandRemouter::handleNewCommand()
 	{
 		//move A-1 B-2
 		const string& command = args[0];
-		const string& firstPos = args[1];
-		const string& secondPos = args[2];
 
-		_logger.Write(firstPos + " " + secondPos);
-
-		vecstr splittedFirstPos = boost::split(splittedFirstPos, firstPos, boost::is_any_of("-"));
-		vecstr splittedSecondPos = boost::split(splittedSecondPos, secondPos, boost::is_any_of("-"));
+		vecstr splittedFirstPos = boost::split(splittedFirstPos, args[1], boost::is_any_of("-"));
+		vecstr splittedSecondPos = boost::split(splittedSecondPos, args[2], boost::is_any_of("-"));
 
 		if (isValidCommandSyntax(command, {args[1], args[2]}) == false)
-		{
 			incorrectCommand();
-		}
 
 		try 
 		{
-			int p1 = std::stoi(splittedFirstPos.at(0));
-			int p2 = std::stoi(splittedFirstPos.at(1));
+			short p1 = std::stoi(splittedFirstPos.at(0));
+			short p2 = std::stoi(splittedFirstPos.at(1));
 
-			int p3 = std::stoi(splittedSecondPos.at(0));
-			int p4 = std::stoi(splittedSecondPos.at(1));
-
+			short p3 = std::stoi(splittedSecondPos.at(0));
+			short p4 = std::stoi(splittedSecondPos.at(1));
 
 			_gameLogic.tryMovePiece(Location(p2, p1), Location(p4, p3));
 		}
@@ -44,10 +41,6 @@ void CommandRemouter::handleNewCommand()
 		{
 			_logger.WriteFile("Error with converting command. Class: CommandRemouter. Error is: bad list index");
 		}
-
-			
-
-		//if(!isValid("move", args[1]))	
 	}
 }
 
