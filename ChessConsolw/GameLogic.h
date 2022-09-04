@@ -7,6 +7,7 @@
 #include "Console.h"
 #include "MovesCalculator.h"
 #include "Pieces.hpp"
+#include "GameSound.h"
 
 #include <iostream>
 #include <string>
@@ -26,6 +27,8 @@ private:
 	PieceManager pieceManager;
 	MovesCalculator _movesCalcer;
 	Desk& _desk = Desk::GetInstanse();
+	GameSound* _gameSound = GameSound::Instanse();
+	SoundList soundList;
 
 	void makeMove(string idWhoMove, Location& placeToMove);
 	void movePieceToKill(string idWhoMove, Location& placeToMove);

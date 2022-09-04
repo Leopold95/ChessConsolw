@@ -77,7 +77,7 @@ void GameLogic::killPiece(Piece& piece)
 void GameLogic::makeMove(string idWhoMove, Location& placeToMove)
 {
 	Location loc = Desk::GetInstanse().Pieces.at(idWhoMove)->CurrentLocation();
-
+	//sound.play(soundList.pieceMove);
 	getPieceById(idWhoMove)->CurrentLocation() = placeToMove;
 }
 
@@ -85,7 +85,7 @@ void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
 {
 	Piece* piece = getPieceById(idWhoMove);
 
-
+	//TODO
 }
 
 bool GameLogic::isCellEmpty(const Location& loc)

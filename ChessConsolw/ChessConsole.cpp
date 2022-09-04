@@ -7,8 +7,7 @@
 #include <vector>
 #include <thread>
 
-#include "SoundSystem.h"
-#include <SFML/Audio.hpp>
+#include "GameSound.h"
 
 #include "SystemVariables.h"
 #include "CommandRemouter.h"
@@ -63,19 +62,13 @@ int main(int argc, char* argv[])
 	std::srand((unsigned int)std::time(&t));
 
 	SystemVariables& sv = SystemVariables::GetInstanse();
-	
+	GameSound* gameSound = GameSound::Instanse();
+
 	Game* game = new Game();
 
-	SoundSystem* ss = new SoundSystem();
-	ss->play("Assets/Sounds/piecemoved.wav");
+	gameSound->play(gameSound->sound_gameStart);
 
-
-
-	std::cin.get();
-
-
-	//game->startNewGame();
-
+	game->startNewGame();
 
 
 	//Client client("127.0.0.1", 25535);

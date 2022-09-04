@@ -175,10 +175,10 @@
     <ClCompile Include="EmptyPiece.hpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="GameSound.cpp" />
     <ClCompile Include="MovesCalculator.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
-    <ClCompile Include="SoundSystem.cpp" />
     <ClCompile Include="SystemVariables.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +191,7 @@
     <ClInclude Include="ErrorMessage.hpp" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="GameSound.h" />
     <ClInclude Include="King.hpp" />
     <ClInclude Include="Knight.hpp" />
     <ClInclude Include="Location.hpp" />
@@ -204,7 +205,7 @@
     <ClInclude Include="PositionList.hpp" />
     <ClInclude Include="Queen.hpp" />
     <ClInclude Include="Rook.hpp" />
-    <ClInclude Include="SoundSystem.h" />
+    <ClInclude Include="SoundList.hpp" />
     <ClInclude Include="SystemVariables.h" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>

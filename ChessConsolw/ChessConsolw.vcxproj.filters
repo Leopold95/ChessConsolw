@@ -69,7 +69,7 @@
     <ClCompile Include="MovesCalculator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SoundSystem.cpp">
+    <ClCompile Include="GameSound.cpp">
       <Filter>System\Src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -146,7 +146,10 @@
     <ClInclude Include="Utils.hpp">
       <Filter>System\Simple</Filter>
     </ClInclude>
-    <ClInclude Include="SoundSystem.h">
+    <ClInclude Include="SoundList.hpp">
+      <Filter>System\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSound.h">
       <Filter>System\Headers</Filter>
     </ClInclude>
   </ItemGroup>
