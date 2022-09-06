@@ -7,8 +7,6 @@
 #include <vector>
 #include <thread>
 
-#include "GameSound.h"
-
 #include "SystemVariables.h"
 #include "CommandRemouter.h"
 #include "Desk.h"
@@ -19,6 +17,7 @@
 
 using std::string;
 using std::vector;
+using std::thread;
 
 using vecstr = std::vector<std::string>;
 
@@ -65,16 +64,13 @@ int main(int argc, char* argv[])
 	GameSound* gameSound = GameSound::Instanse();
 
 	Game* game = new Game();
-
-	gameSound->play(gameSound->sound_gameStart);
-
 	game->startNewGame();
 
 
 	//Client client("127.0.0.1", 25535);
 	//client.Connect();
 
-
+	delete gameSound;
 	delete game;
 	return 0;
 }

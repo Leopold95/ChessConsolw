@@ -7,4 +7,6 @@ struct SoundList
 {
 	string pieceMove = "Assets/Sounds/piecemoved.wav";
 	string gameStart = "Assets/Sounds/gamestart.wav";
+
+	string music_backGround = "Assets/Music/backgrpund.wav";
 };

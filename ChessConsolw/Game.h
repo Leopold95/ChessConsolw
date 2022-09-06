@@ -6,6 +6,7 @@
 #include "Utils.hpp"
 #include "CommandRemouter.h"
 #include "Console.h"
+#include "GameSound.h"
 
 class Game
 {
@@ -19,9 +20,10 @@ public:
 
 private:
 	Desk& _desk = Desk::GetInstanse();
+	GameSound* _gameSound = GameSound::Instanse();
+	CommandRemouter _commandRemouter;
 	PieceManager _pieceManager;
 	GameLogic _gameLogic;
-	CommandRemouter _commandRemouter;
 
 	void initialise();
 	void runGameLoop();
