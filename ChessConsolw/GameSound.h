@@ -42,9 +42,11 @@ private:
 	sf::SoundBuffer buffer_movePiece;
 	sf::SoundBuffer buffer_gameStart;
 
-	sf::Music* _currentBackgroundMusic;
+	bool _isPlayingBackgroundMusic;
+	sf::Music* _currentBacgroundMusic;
 
 	sf::Music* music_background_1;
+	sf::Music* music_background_2;
 
 	std::vector<sf::Music*> _backgroundMusicList;
 };

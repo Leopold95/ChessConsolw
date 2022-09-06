@@ -26,6 +26,7 @@ void GameSound::play(sf::Sound& sound, short volume)
 GameSound::GameSound()
 {
 	initMusic();
+	_currentBacgroundMusic = new sf::Music();
 
 	buffer_movePiece.loadFromFile(soundList.pieceMove);
 	sound_movePiece.setBuffer(buffer_movePiece);
@@ -43,26 +44,33 @@ void GameSound::initMusic()
 	music_background_1 = new sf::Music();
 	music_background_1->openFromFile(soundList.music_backGround);
 	music_background_1->setVolume(_defaultMusicVolume);
+
+	music_background_2 = new sf::Music();
+	music_background_2->openFromFile(soundList.music_backGround_2);
+	music_background_2->setVolume(_defaultMusicVolume);
 }
 
 void GameSound::bacgroundMusicProcessor()
 {
 	while (true)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		if (_currentBacgroundMusic->getStatus() == sf::Music::Stopped)
+		{
+			short randomId = std::rand() % _backgroundMusicList.size();
 
-		if (_currentBackgroundMusic == nullptr)
-		{
-			_currentBackgroundMusic = _backgroundMusicList[std::rand() % _backgroundMusicList.size()];
+			delete _currentBacgroundMusic;
+			_currentBacgroundMusic = nullptr;
+
+			_currentBacgroundMusic = _backgroundMusicList[randomId];
+			_currentBacgroundMusic->play();
 		}
-		else if(_currentBackgroundMusic != nullptr && _currentBackgroundMusic->Playing)
+		else if (_currentBacgroundMusic->getStatus() == sf::Music::Playing)
 		{
-			continue;
+			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 		}
-		else
-		{
-			_currentBackgroundMusic->play();
-		}
+
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));	
 	}
 }
 
