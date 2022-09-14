@@ -3,7 +3,7 @@
 #include <vector>
 
 template <typename T>
-class IterableVector : public std::vector
+class IterableVector
 {
 public:
 	void add(T);
@@ -13,7 +13,7 @@ public:
 
 private:
 	std::vector<T> container;
-	int count = -1;
+	int count = 0;
 	bool editable = true;
 
 	inline void counterChecher();
