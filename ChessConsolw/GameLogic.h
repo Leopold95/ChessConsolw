@@ -8,8 +8,8 @@
 #include "MovesCalculator.h"
 #include "Pieces.hpp"
 #include "GameSound.h"
+#include "Structs.hpp"
 
-#include <iostream>
 #include <string>
 
 using std::string;
@@ -28,13 +28,13 @@ private:
 	MovesCalculator _movesCalcer;
 	Desk& _desk = Desk::GetInstanse();
 	GameSound* _gameSound = GameSound::Instanse();
-	SoundList soundList;
+	Structs::SoundList soundList;
 
 	void makeMove(string idWhoMove, Location& placeToMove);
 	void movePieceToKill(string idWhoMove, Location& placeToMove);
 	bool isCellEmpty(const Location& loc);
 	Piece* getPieceById(string id);
-	PieceList getPieceByLocation(Location loc);
+	PieceList getPieceByLocation(Location loc); //TODO what is this (make normal piece checker)
 
 	const std::string CELL_FREE = " ";
 	const std::string CELL_OCCUPIED = "1";

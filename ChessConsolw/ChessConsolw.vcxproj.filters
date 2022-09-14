@@ -72,6 +72,9 @@
     <ClCompile Include="GameSound.cpp">
       <Filter>System\Src</Filter>
     </ClCompile>
+    <ClCompile Include="IterableVector.cpp">
+      <Filter>System\Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
@@ -146,10 +149,13 @@
     <ClInclude Include="Utils.hpp">
       <Filter>System\Simple</Filter>
     </ClInclude>
-    <ClInclude Include="SoundList.hpp">
+    <ClInclude Include="GameSound.h">
+      <Filter>System\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.hpp">
       <Filter>System\Simple</Filter>
     </ClInclude>
-    <ClInclude Include="GameSound.h">
+    <ClInclude Include="IterableVector.h">
       <Filter>System\Headers</Filter>
     </ClInclude>
   </ItemGroup>

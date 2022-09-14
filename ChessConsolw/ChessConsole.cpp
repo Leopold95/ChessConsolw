@@ -5,19 +5,14 @@
 #include <random>
 #include <string>
 #include <vector>
-#include <thread>
 
 #include "SystemVariables.h"
-#include "CommandRemouter.h"
-#include "Desk.h"
-#include "Utils.hpp"
 #include "Game.h"
 
 #include <Windows.h>
 
 using std::string;
 using std::vector;
-using std::thread;
 
 using vecstr = std::vector<std::string>;
 
@@ -50,6 +45,41 @@ void argumentChecker(int c, char* args[])
 	 
 }
 
+template <typename T> 
+class IterableVector2
+{
+public:
+	IterableVector2(){}
+
+	void add(T type) 
+	{
+		if (editable)
+		{
+			count++;
+			container.push_back(type);
+		}
+	}
+
+	T next() 
+	{
+		editable = false;
+		count--;
+		counterChecher();
+		return container[count];
+	}
+
+private:
+	std::vector<T> container;
+	int count = -1;
+	bool editable = true;
+
+	inline void counterChecher()
+	{
+		if (count < 0)
+			count = container.size() - 1;
+	}
+};
+
 
 int main(int argc, char* argv[])
 {
@@ -60,11 +90,15 @@ int main(int argc, char* argv[])
 	std::time_t t;
 	std::srand((unsigned int)std::time(&t));
 
-	SystemVariables& sv = SystemVariables::GetInstanse();
+	SystemVariables* sv = SystemVariables::GetInstanse();
 	GameSound* gameSound = GameSound::Instanse();
 
 	Game* game = new Game();
 	game->startNewGame();
+
+
+
+	
 
 
 	//Client client("127.0.0.1", 25535);
@@ -72,5 +106,6 @@ int main(int argc, char* argv[])
 
 	delete gameSound;
 	delete game;
+	delete sv;
 	return 0;
 }

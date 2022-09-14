@@ -7,7 +7,9 @@
 #include <vector>
 #include <random>
 
-#include "SoundList.hpp"
+#include "Structs.hpp"
+#include "SystemVariables.h"
+#include "IterableVector.h"
 
 class GameSound
 {
@@ -24,7 +26,7 @@ public:
 
 private:
 	GameSound();
-	GameSound(GameSound& other) = delete;
+	GameSound(GameSound&) = delete;
 	void operator=(const GameSound&) = delete;
 	GameSound& operator=(GameSound&) = delete;
 	static GameSound* _instanse;
@@ -35,19 +37,14 @@ private:
 	std::thread spawnThread();
 	std::thread musicProcessor;
 
-	short _defaultSoundVolume = 40;
-	short _defaultMusicVolume = 10;
+	SystemVariables* sv = SystemVariables::GetInstanse();
 
-	SoundList soundList;
+	Structs::SoundList soundList;
 	sf::SoundBuffer buffer_movePiece;
 	sf::SoundBuffer buffer_gameStart;
 
-	bool _isPlayingBackgroundMusic;
 	sf::Music* _currentBacgroundMusic;
 
-	sf::Music* music_background_1;
-	sf::Music* music_background_2;
-
-	std::vector<sf::Music*> _backgroundMusicList;
+	IterableVector<sf::Music*> backgroundMusicList;
 };
 

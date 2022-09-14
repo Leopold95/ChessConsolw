@@ -12,7 +12,7 @@ GameSound* GameSound::Instanse()
 
 void GameSound::play(sf::Sound& sound)
 {
-	sound.setVolume(_defaultSoundVolume);
+	sound.setVolume(sv->SoundOptions.SoundsVolume);
 	sound.play();
 }
 
@@ -20,7 +20,7 @@ void GameSound::play(sf::Sound& sound, short volume)
 {
 	sound.setVolume(volume);
 	sound.play();
-	sound.setVolume(_defaultSoundVolume);
+	sound.setVolume(sv->SoundOptions.SoundsVolume);
 }
 
 GameSound::GameSound()
@@ -31,44 +31,34 @@ GameSound::GameSound()
 	buffer_movePiece.loadFromFile(soundList.pieceMove);
 	sound_movePiece.setBuffer(buffer_movePiece);
 
-	buffer_gameStart.loadFromFile(soundList.gameStart);
+	buffer_gameStart.loadFromFile(soundList.music_gameStart);
 	sound_gameStart.setBuffer(buffer_gameStart);
 
 	musicProcessor = spawnThread();
-
-	_backgroundMusicList.push_back(music_background_1);
 }
 
 void GameSound::initMusic()
 {
-	music_background_1 = new sf::Music();
-	music_background_1->openFromFile(soundList.music_backGround);
-	music_background_1->setVolume(_defaultMusicVolume);
-
-	music_background_2 = new sf::Music();
-	music_background_2->openFromFile(soundList.music_backGround_2);
-	music_background_2->setVolume(_defaultMusicVolume);
+	for (auto& item : soundList.backMusic)
+	{
+		backgroundMusicList.add(new sf::Music());
+	}
 }
 
 void GameSound::bacgroundMusicProcessor()
 {
 	while (true)
-	{
+	{ 
+		//TODO make normal backgorund check system
 		if (_currentBacgroundMusic->getStatus() == sf::Music::Stopped)
 		{
-			short randomId = std::rand() % _backgroundMusicList.size();
+			short randomId = sv->randomShort(0, backgroundMusicList.size());
 
-			delete _currentBacgroundMusic;
 			_currentBacgroundMusic = nullptr;
 
-			_currentBacgroundMusic = _backgroundMusicList[randomId];
+			_currentBacgroundMusic = backgroundMusicList.getId(randomId);
 			_currentBacgroundMusic->play();
 		}
-		else if (_currentBacgroundMusic->getStatus() == sf::Music::Playing)
-		{
-			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-		}
-
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(2000));	
 	}

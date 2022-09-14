@@ -1,17 +1,24 @@
 #pragma once
 
-#include <vector>
-#include <string>
-#include <unordered_map>
+#include "Structs.hpp"
+#include <ctime>
 
 class SystemVariables
 {
 public:
-	static SystemVariables& GetInstanse();
-	SystemVariables(const SystemVariables&) = delete;
+	static SystemVariables* GetInstanse();
 
+	const Structs::SoundOptions SoundOptions;
+
+	short randomShort(int, int);
 
 private:
 	SystemVariables();
-	static SystemVariables instanse;
+	SystemVariables(const SystemVariables&) = delete;
+	SystemVariables(SystemVariables&) = delete;
+	void operator=(const SystemVariables&) = delete;
+	SystemVariables& operator=(SystemVariables&) = delete;
+	static SystemVariables* instanse;
+
+
 };
