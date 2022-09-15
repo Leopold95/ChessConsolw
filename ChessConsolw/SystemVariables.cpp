@@ -13,13 +13,13 @@ SystemVariables* SystemVariables::GetInstanse()
 
 
 
-short SystemVariables::randomShort(int min = 0, int max = 10)
+short SystemVariables::randomShort(int min, int max)
 {
 	std::time_t t;
 	std::srand((unsigned int)std::time(&t));
 
 
-	return std::rand() % max + min;
+	return std::rand() % int(max) + min;
 }
 
 SystemVariables::SystemVariables()

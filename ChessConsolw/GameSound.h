@@ -4,7 +4,6 @@
 #include <string>
 #include <thread>
 #include <chrono>
-#include <vector>
 #include <random>
 
 #include "Structs.hpp"
@@ -16,8 +15,6 @@ class GameSound
 public:
 	static GameSound* Instanse();
 
-	void play(std::string);
-	void play(std::string, short);
 	void play(sf::Sound&);
 	void play(sf::Sound&, short);
 

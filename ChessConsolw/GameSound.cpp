@@ -41,7 +41,7 @@ void GameSound::initMusic()
 {
 	for (auto& item : soundList.backMusic)
 	{
-		backgroundMusicList.add(new sf::Music());
+		//backgroundMusicList.add(new sf::Music());
 	}
 }
 

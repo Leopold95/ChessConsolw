@@ -73,7 +73,7 @@
       <Filter>System\Src</Filter>
     </ClCompile>
     <ClCompile Include="IterableVector.cpp">
-      <Filter>System\Src</Filter>
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +156,7 @@
       <Filter>System\Simple</Filter>
     </ClInclude>
     <ClInclude Include="IterableVector.h">
-      <Filter>System\Headers</Filter>
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
