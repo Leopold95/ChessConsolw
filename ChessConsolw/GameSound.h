@@ -8,7 +8,7 @@
 
 #include "Structs.hpp"
 #include "SystemVariables.h"
-#include "IterableVector.h"
+#include "IterableVector.hpp"
 
 class GameSound
 {
@@ -30,7 +30,7 @@ private:
 
 	void initMusic();
 
-	void bacgroundMusicProcessor();
+	void bacgroundMusicProcessor() noexcept;
 	std::thread spawnThread();
 	std::thread musicProcessor;
 

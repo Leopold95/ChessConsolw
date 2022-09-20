@@ -37,7 +37,7 @@ void CommandRemouter::handleNewCommand()
 
 			_gameLogic.tryMovePiece(Location(p2, p1), Location(p4, p3));
 		}
-		catch (std::exception& ex)
+		catch (std::exception&)
 		{
 			_logger.WriteFile("Error with converting command. Class: CommandRemouter. Error is: bad list index");
 		}
@@ -52,7 +52,7 @@ void CommandRemouter::incorrectCommand()
 
 bool CommandRemouter::isValidCommandSyntax(const string& command, vecstr args)
 {
-	if (iequals("move", command))
+	if (iequals(command, "move"))
 	{
 		auto fistValid = std::find(valid_poses.begin(), valid_poses.end(), args[0]);
 		auto secondValid = std::find(valid_poses.begin(), valid_poses.end(), args[1]);

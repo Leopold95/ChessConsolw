@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vector>
-#include <SFML/Audio.hpp>
 
 template <typename T>
 class IterableVector
@@ -16,7 +15,7 @@ public:
 		}
 	}
 
-	T getNext() 
+	T& getNext() 
 	{
 		editable = false;
 		count--;
@@ -25,12 +24,17 @@ public:
 		return container[count];
 	}
 
-	T getId(short id) 
+	T& getId(short id) 
 	{
 		return container[id];
 	}
 
-	size_t size() 
+	T& getId(size_t id)
+	{
+		return container[id];
+	}
+
+	size_t size() const
 	{
 		return container.size();
 	}
@@ -40,7 +44,8 @@ private:
 	int count = 0;
 	bool editable = true;
 
-	inline void counterChecher() {
+	inline void counterChecher() 
+	{
 		if (count < 0)
 			count = container.size() - 1;
 	}

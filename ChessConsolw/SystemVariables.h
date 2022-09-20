@@ -2,6 +2,10 @@
 
 #include "Structs.hpp"
 #include <ctime>
+#include <random>
+#include "random.hpp"
+
+using Random = effolkronium::random_static;
 
 class SystemVariables
 {

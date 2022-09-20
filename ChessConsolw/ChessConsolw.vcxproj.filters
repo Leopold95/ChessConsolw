@@ -72,9 +72,6 @@
     <ClCompile Include="GameSound.cpp">
       <Filter>System\Src</Filter>
     </ClCompile>
-    <ClCompile Include="IterableVector.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Desk.h">
@@ -155,8 +152,8 @@
     <ClInclude Include="Structs.hpp">
       <Filter>System\Simple</Filter>
     </ClInclude>
-    <ClInclude Include="IterableVector.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="IterableVector.hpp">
+      <Filter>System\Simple</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

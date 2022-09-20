@@ -39,13 +39,20 @@ GameSound::GameSound()
 
 void GameSound::initMusic()
 {
-	for (auto& item : soundList.backMusic)
+	//!!!два цикла необходимы!!!
+
+	//заполнение списка музыки пустыми треками
+	for (size_t i = 0; i < soundList.backMusic.size(); i++)
+		backgroundMusicList.add(new sf::Music());
+
+	for (size_t i = 0; i < soundList.backMusic.size(); i++) 
 	{
-		//backgroundMusicList.add(new sf::Music());
+		backgroundMusicList.getId(i)->openFromFile(soundList.backMusic[i]);
+		backgroundMusicList.getId(i)->setVolume(sv->SoundOptions.MusicVolume);
 	}
 }
 
-void GameSound::bacgroundMusicProcessor()
+void GameSound::bacgroundMusicProcessor() noexcept
 {
 	while (true)
 	{ 

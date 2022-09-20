@@ -176,7 +176,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="GameSound.cpp" />
-    <ClCompile Include="IterableVector.cpp" />
     <ClCompile Include="MovesCalculator.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
@@ -193,7 +192,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLogic.h" />
     <ClInclude Include="GameSound.h" />
-    <ClInclude Include="IterableVector.h" />
+    <ClInclude Include="IterableVector.hpp" />
     <ClInclude Include="King.hpp" />
     <ClInclude Include="Knight.hpp" />
     <ClInclude Include="Location.hpp" />
