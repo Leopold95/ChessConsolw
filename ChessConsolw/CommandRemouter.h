@@ -19,7 +19,6 @@ class CommandRemouter
 {
 public:
 	CommandRemouter();
-	~CommandRemouter();
 	void handleNewCommand();
 
 private:

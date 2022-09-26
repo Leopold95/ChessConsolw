@@ -10,8 +10,8 @@ namespace Structs
 {
 	struct SoundOptions
 	{
-		short MusicVolume = 0;
-		short SoundsVolume = 60;
+		short MusicVolume = 30;
+		short SoundsVolume = 40;
 	};
 
 	struct SoundList

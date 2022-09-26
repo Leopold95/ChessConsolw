@@ -27,6 +27,7 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 	}
 
 
+
 	//проверка второго положения 
 	//if (isCellEmpty(loc2))
 		//makeMove(,);
@@ -61,6 +62,7 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 	case PieceList::Bishop:
 		break;
 
+		//TODO create default return value
 	default:
 		break;
 	}
@@ -74,10 +76,39 @@ void GameLogic::killPiece(Piece& piece)
 	piece.Kill();
 }
 
+int GameLogic::letterToInt(std::string letter)
+{
+	if (iequals(letter, "a") || iequals(letter, "A"))
+		return 1;
+
+	if (iequals(letter, "b") || iequals(letter, "B"))
+		return 2;
+
+	if (iequals(letter, "c") || iequals(letter, "C"))
+		return 3;
+
+	if (iequals(letter, "d") || iequals(letter, "D"))
+		return 4;
+
+	if (iequals(letter, "e") || iequals(letter, "E"))
+		return 5;
+
+	if (iequals(letter, "f") || iequals(letter, "F"))
+		return 6;
+
+	if (iequals(letter, "g") || iequals(letter, "G"))
+		return 7;
+
+	if (iequals(letter, "h") || iequals(letter, "H"))
+		return 8;
+
+	return 0;
+}
+
 void GameLogic::makeMove(string idWhoMove, Location& placeToMove)
 {
 	Location loc = Desk::GetInstanse().Pieces.at(idWhoMove)->CurrentLocation();
-	//sound.play(soundList.pieceMove);
+	_gameSound->sound_movePiece.play();
 	getPieceById(idWhoMove)->CurrentLocation() = placeToMove;
 }
 

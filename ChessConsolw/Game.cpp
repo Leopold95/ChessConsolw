@@ -75,11 +75,15 @@ void Game::updatePrintebleDesk()
 
 void Game::runGameLoop()
 {
-	_desk.print(_desk.PritebleDesk);
+	do
+	{
+		_desk.print(_desk.PritebleDesk);
 
-	_commandRemouter.handleNewCommand();
+		_commandRemouter.handleNewCommand();
 
-	updatePrintebleDesk();
+		updatePrintebleDesk();
 
-	_desk.print(_desk.PritebleDesk);
+		_desk.print(_desk.PritebleDesk);
+	} 
+	while (true);
 }

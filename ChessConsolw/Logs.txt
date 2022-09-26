@@ -1,2 +1,12 @@
 [2022-09-04 07:16:47.8560321] Error while opening sound file. Sound file name: Assets/Sounds/piecemove.waw
 [2022-09-04 07:17:34.1798235] Error while opening sound file. Sound file name: Assets/Sounds/piecemoved.waw
+[2022-09-23 18:48:33.0368376] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-23 18:49:40.4840107] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:38.9092460] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:40.0570539] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:41.0996336] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:41.9508040] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:43.6553307] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:44.4830890] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:45.4600482] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-26 21:13:46.3137882] Error with converting command. Class: CommandRemouter. Error is: bad list index

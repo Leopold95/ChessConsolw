@@ -10,9 +10,12 @@
 #include "GameSound.h"
 #include "Structs.hpp"
 
+#include <boost/algorithm/string.hpp>
+
 #include <string>
 
 using std::string;
+using namespace boost::algorithm;
 
 class GameLogic
 {
@@ -22,6 +25,7 @@ public:
 
 	void tryMovePiece(Location loc1, Location loñ2);
 	void killPiece(Piece& piece);
+	int letterToInt(std::string letter);
 
 private:
 	PieceManager pieceManager;
