@@ -88,7 +88,7 @@ int GameLogic::letterToInt(std::string letter)
 		return 3;
 
 	if (iequals(letter, "d") || iequals(letter, "D"))
-		return 4;
+		return 4; 
 
 	if (iequals(letter, "e") || iequals(letter, "E"))
 		return 5;
