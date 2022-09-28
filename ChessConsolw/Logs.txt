@@ -10,3 +10,4 @@
 [2022-09-26 21:13:44.4830890] Error with converting command. Class: CommandRemouter. Error is: bad list index
 [2022-09-26 21:13:45.4600482] Error with converting command. Class: CommandRemouter. Error is: bad list index
 [2022-09-26 21:13:46.3137882] Error with converting command. Class: CommandRemouter. Error is: bad list index
+[2022-09-28 18:27:06.0079471] Error with converting command. Class: CommandRemouter. Error is: bad list index

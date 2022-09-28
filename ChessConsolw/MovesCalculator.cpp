@@ -75,8 +75,8 @@ vector<Location> MovesCalculator::kingMoves(const Location& currentLocation)
 {
 	vector<Location> temp;
 
-	temp.push_back(Location(currentLocation.x, currentLocation.y + 1));
-	temp.push_back(Location(currentLocation.x, currentLocation.y - 1));
+	temp.push_back(Location(currentLocation.x,	   currentLocation.y + 1));
+	temp.push_back(Location(currentLocation.x, 	   currentLocation.y - 1));
 	temp.push_back(Location(currentLocation.x + 1, currentLocation.y));
 	temp.push_back(Location(currentLocation.x - 1, currentLocation.y));
 

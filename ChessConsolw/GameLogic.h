@@ -13,6 +13,7 @@
 #include <boost/algorithm/string.hpp>
 
 #include <string>
+#include <exception>
 
 using std::string;
 using namespace boost::algorithm;
@@ -37,8 +38,10 @@ private:
 	void makeMove(string idWhoMove, Location& placeToMove);
 	void movePieceToKill(string idWhoMove, Location& placeToMove);
 	bool isCellEmpty(const Location& loc);
-	Piece* getPieceById(string id);
-	PieceList getPieceByLocation(Location loc); //TODO what is this (make normal piece checker)
+	bool isPieceExistAt(const Location& loc);
+	Piece* getPiece(string id);
+	Piece* getPiece(Location loc); //TODO what is this (make normal piece checker)
+	PieceList getPiceType(Location loc);
 
 	const std::string CELL_FREE = " ";
 	const std::string CELL_OCCUPIED = "1";

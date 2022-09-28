@@ -29,14 +29,15 @@ void GameLogic::tryMovePiece(Location loc1, Location loc2)
 
 
 	//проверка второго положения 
-	//if (isCellEmpty(loc2))
-		//makeMove(,);
-	//else
-		//makeKill();
+	if (isCellEmpty(loc2) == false)
+		makeMove(id, loc2);
+	else
+	{
 
+	}
 
 	//работаем с типом фигуры полученным из ее положения
-	switch (getPieceByLocation(loc1))
+	switch (getPiceType(loc1))
 	{		
 	case PieceList::Pawn:
 		if(_movesCalcer.canPawnMoveTo(loc1, loc2))
@@ -109,14 +110,15 @@ void GameLogic::makeMove(string idWhoMove, Location& placeToMove)
 {
 	Location loc = Desk::GetInstanse().Pieces.at(idWhoMove)->CurrentLocation();
 	_gameSound->sound_movePiece.play();
-	getPieceById(idWhoMove)->CurrentLocation() = placeToMove;
+	getPiece(idWhoMove)->CurrentLocation() = placeToMove;
 }
 
 void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
 {
-	Piece* piece = getPieceById(idWhoMove);
+	Piece* secPiece = getPiece(placeToMove);
+	secPiece->Kill();
 
-	//TODO
+	makeMove(idWhoMove, placeToMove);
 }
 
 bool GameLogic::isCellEmpty(const Location& loc)
@@ -127,17 +129,38 @@ bool GameLogic::isCellEmpty(const Location& loc)
 	return true;
 }
 
-Piece* GameLogic::getPieceById(string id)
+bool GameLogic::isPieceExistAt(const Location& loc)
+{
+	Piece* p = getPiece(loc);
+
+	if (p->CurrentLocation() == loc)
+		return true;
+
+	return false;
+}
+
+Piece* GameLogic::getPiece(string id)
 {
 	return Desk::GetInstanse().Pieces[id];
 }
 
-PieceList GameLogic::getPieceByLocation(Location loc)
+Piece* GameLogic::getPiece(Location loc)
 {
-	for (auto&[id, piece] : Desk::GetInstanse().Pieces)
+	for (auto& [id, piece] : _desk.Pieces)
 		if (piece->CurrentLocation() == loc)
-			return piece->CurrentPiece();
+			return piece;
 
-	return PieceList::None;
+	throw new std::exception("No piece at requared location.");
+
+	return new EmptyPiece();
+}
+
+PieceList GameLogic::getPiceType(Location loc)
+{
+	for (auto& item : _desk.Pieces)
+		if (item.second->CurrentLocation() == loc)
+			return item.second->CurrentPiece();
+
+	return PieceList();
 }
 
