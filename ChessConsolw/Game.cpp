@@ -77,13 +77,16 @@ void Game::runGameLoop()
 {
 	do
 	{
-		_desk.print(_desk.PritebleDesk);
+		_gameLogic.printDesk();
+		//_desk.print(_desk.PritebleDesk);
 
 		_commandRemouter.handleNewCommand();
 
 		updatePrintebleDesk();
+		//_gameLogic.printDesk();
 
-		_desk.print(_desk.PritebleDesk);
+		_gameLogic.printDesk();
+		//_desk.print(_desk.PritebleDesk);
 	} 
 	while (true);
 }

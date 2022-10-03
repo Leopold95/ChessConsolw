@@ -23,3 +23,16 @@ void Desk::print(std::string desk[9][9])
     }
 }
 
+void Desk::print_new()
+{
+
+}
+
+void Desk::printWhite(std::string piece)
+{
+}
+
+void Desk::printBlack(std::string piece)
+{
+
+}

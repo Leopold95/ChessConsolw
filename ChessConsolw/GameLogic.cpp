@@ -142,6 +142,34 @@ bool GameLogic::isPieceExistAt(const Location& loc)
 	return false;
 }
 
+void GameLogic::printDesk()
+{
+	for (const auto& [id, piece] : _desk.Pieces)
+	{
+		if (piece->CurrentColor() == Color::White) 
+		{
+			printWhite(pieceTypeToStr(piece->CurrentPiece()));
+			continue;
+		}
+
+		if (piece->CurrentColor() == Color::Black)
+		{
+			printBlack(pieceTypeToStr(piece->CurrentPiece()));
+			continue;
+		}
+	}
+}
+
+void GameLogic::printWhite(std::string piece)
+{
+	printf("\033[38;5;%dm %s\033[m", 15, piece.c_str());
+}
+
+void GameLogic::printBlack(std::string piece)
+{
+	printf("\033[38;5;%dm %s\033[m", 27, piece.c_str());
+}
+
 Piece* GameLogic::getPiece(string id)
 {
 	return Desk::GetInstanse().Pieces[id];
@@ -165,5 +193,38 @@ PieceList GameLogic::getPiceType(Location loc)
 			return item.second->CurrentPiece();
 
 	return PieceList();
+}
+
+string GameLogic::pieceTypeToStr(PieceList type)
+{
+	switch (type)
+	{
+	case PieceList::Pawn:
+		return "p";
+		break;
+	case PieceList::King:
+		return "K";
+		break;
+	case PieceList::Queen:
+		return "Q";
+		break;
+	case PieceList::Rook:
+		return "r";
+		break;
+	case PieceList::Knight:
+		return "k";
+		break;
+	case PieceList::Bishop:
+		return "b";
+		break;
+	case PieceList::None:
+		return "N";
+		break;
+	default:
+		break;
+	}
+
+
+	return "None";
 }
 

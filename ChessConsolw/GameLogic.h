@@ -26,6 +26,7 @@ public:
 
 	void tryMovePiece(Location loc1, Location loñ2);
 	void killPiece(Piece& piece);
+	void printDesk();
 	int letterToInt(std::string letter);
 
 private:
@@ -39,9 +40,12 @@ private:
 	void movePieceToKill(string idWhoMove, Location& placeToMove);
 	bool isCellEmpty(const Location& loc);
 	bool isPieceExistAt(const Location& loc);
+	void printWhite(std::string piece);
+	void printBlack(std::string piece);
 	Piece* getPiece(string id);
 	Piece* getPiece(Location loc); 
 	PieceList getPiceType(Location loc);
+	string pieceTypeToStr(PieceList type);
 
 	const std::string CELL_FREE = " ";
 	const std::string CELL_OCCUPIED = "1";

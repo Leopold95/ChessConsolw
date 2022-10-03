@@ -1,10 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#define NDEBUG
 
 #include <iostream>
 #include <random>
-#include <string>
-#include <vector>
 
 #include "SystemVariables.h"
 #include "GameSound.h"
@@ -13,9 +10,10 @@
 #include <Windows.h>
 
 using std::string;
-using std::vector;
+using std::cin;
+using std::cout;
+using std::endl;
 
-using vecstr = std::vector<std::string>;
 
 //COLORPRIORITY(WHITE, BLACK, NONE) default NONE
 //DIFFICULT(EASY, MEDIUM, HARD) default EASY
@@ -46,40 +44,16 @@ void argumentChecker(int c, char* args[])
 	 
 }
 
-template <typename T> 
-class IterableVector2
+void printWhite(std::string piece)
 {
-public:
-	IterableVector2(){}
+	printf("\033[38;5;%dm %s\033[m", 15, piece.c_str());
+}
 
-	void add(T type) 
-	{
-		if (editable)
-		{
-			count++;
-			container.push_back(type);
-		}
-	}
+void printBlack(std::string piece)
+{
+	printf("\033[38;5;%dm %s\033[m", 27, piece.c_str());
+}
 
-	T next() 
-	{
-		editable = false;
-		count--;
-		counterChecher();
-		return container[count];
-	}
-
-private:
-	std::vector<T> container;
-	int count = -1;
-	bool editable = true;
-
-	inline void counterChecher()
-	{
-		if (count < 0)
-			count = container.size() - 1;
-	}
-};
 
 
 int main(int argc, char* argv[])
@@ -97,14 +71,15 @@ int main(int argc, char* argv[])
 	Game* game = new Game();
 	game->startNewGame();
 
-
-
-	
+	printBlack("d");
+	printWhite("p");
 
 
 	//Client client("127.0.0.1", 25535);
 	//client.Connect();
 
+
+	std::cin;
 	delete gameSound;
 	delete game;
 	delete sv;

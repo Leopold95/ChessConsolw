@@ -20,6 +20,7 @@ public:
     Desk(const Desk&) = delete;
 
     void print(string desk[9][9]);
+    void print_new();
 
     std::unordered_map<std::string, Piece*> Pieces;
     std::string PritebleDesk[9][9];
@@ -30,6 +31,9 @@ private:
     Desk();
     
     PieceManager _pieceManager;
+
+    void printWhite(std::string piece);
+    void printBlack(std::string piece);
 
 public:
     const std::unordered_map<std::string, Piece*> DefaultPieces = _pieceManager.placeStarterPieceOnDesk();
