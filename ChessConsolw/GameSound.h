@@ -13,13 +13,11 @@
 class GameSound
 {
 public:
+	~GameSound();
 	static GameSound* Instanse();
 
-	void play(sf::Sound&);
-	void play(sf::Sound&, short);
-
 	sf::Sound sound_movePiece;
-	sf::Sound sound_gameStart;
+	sf::Sound sound_enemyPieceDeath;
 
 private:
 	GameSound();
@@ -37,8 +35,9 @@ private:
 	SystemVariables* sv = SystemVariables::GetInstanse();
 
 	Structs::SoundList soundList;
+
 	sf::SoundBuffer buffer_movePiece;
-	sf::SoundBuffer buffer_gameStart;
+	sf::SoundBuffer buffer_enemyPieceDeath;
 
 	sf::Music* _currentBacgroundMusic;
 

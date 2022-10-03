@@ -179,6 +179,7 @@
     <ClCompile Include="MovesCalculator.cpp" />
     <ClCompile Include="PieceList.hpp" />
     <ClCompile Include="PieceManager.cpp" />
+    <ClCompile Include="SoundList.cpp" />
     <ClCompile Include="SystemVariables.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,9 +204,9 @@
     <ClInclude Include="Piece.hpp" />
     <ClInclude Include="PieceManager.h" />
     <ClInclude Include="Pieces.hpp" />
-    <ClInclude Include="PositionList.hpp" />
     <ClInclude Include="Queen.hpp" />
     <ClInclude Include="Rook.hpp" />
+    <ClInclude Include="SoundList.h" />
     <ClInclude Include="Structs.hpp" />
     <ClInclude Include="SystemVariables.h" />
     <ClInclude Include="Utils.hpp" />

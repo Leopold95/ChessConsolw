@@ -27,5 +27,7 @@ namespace Structs
 		const string pieceMove = "Assets/Sounds/piecemoved.wav";
 		const string music_gameStart = "Assets/Music/gamestart.wav";
 		std::vector<string>  backMusic;
+
+		const string sound_EnemyPieceDeath = "Assets/Sounds/enemypiecedeath.wav";
 	};
 }

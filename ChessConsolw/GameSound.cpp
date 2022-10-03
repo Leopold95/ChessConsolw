@@ -2,6 +2,12 @@
 
 GameSound* GameSound::_instanse;
 
+GameSound::~GameSound()
+{
+	for (size_t i = 0; i < soundList.backMusic.size(); i++)
+		delete backgroundMusicList.getId(i);
+}
+
 GameSound* GameSound::Instanse()
 {
 	if (_instanse == nullptr)
@@ -10,35 +16,23 @@ GameSound* GameSound::Instanse()
 	return _instanse;
 }
 
-void GameSound::play(sf::Sound& sound)
-{
-	sound.setVolume(sv->SoundOptions.SoundsVolume);
-	sound.play();
-}
-
-void GameSound::play(sf::Sound& sound, short volume)
-{
-	sound.setVolume(volume);
-	sound.play();
-	sound.setVolume(sv->SoundOptions.SoundsVolume);
-}
-
 GameSound::GameSound()
 {
 	initMusic();
 	_currentBacgroundMusic = new sf::Music();
-
-	buffer_movePiece.loadFromFile(soundList.pieceMove);
-	sound_movePiece.setBuffer(buffer_movePiece);
-
-	buffer_gameStart.loadFromFile(soundList.music_gameStart);
-	sound_gameStart.setBuffer(buffer_gameStart);
 
 	musicProcessor = spawnThread();
 }
 
 void GameSound::initMusic()
 {
+	buffer_movePiece.loadFromFile(soundList.pieceMove);
+	sound_movePiece.setBuffer(buffer_movePiece);
+	sound_movePiece.setVolume(80);
+
+	buffer_enemyPieceDeath.loadFromFile(soundList.sound_EnemyPieceDeath);
+	sound_enemyPieceDeath.setBuffer(buffer_enemyPieceDeath);
+
 	//!!!два цикла необходимы!!!
 
 	//заполнение списка музыки пустыми треками

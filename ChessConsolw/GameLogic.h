@@ -40,7 +40,7 @@ private:
 	bool isCellEmpty(const Location& loc);
 	bool isPieceExistAt(const Location& loc);
 	Piece* getPiece(string id);
-	Piece* getPiece(Location loc); //TODO what is this (make normal piece checker)
+	Piece* getPiece(Location loc); 
 	PieceList getPiceType(Location loc);
 
 	const std::string CELL_FREE = " ";

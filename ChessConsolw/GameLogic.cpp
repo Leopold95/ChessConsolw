@@ -108,7 +108,8 @@ int GameLogic::letterToInt(std::string letter)
 
 void GameLogic::makeMove(string idWhoMove, Location& placeToMove)
 {
-	Location loc = Desk::GetInstanse().Pieces.at(idWhoMove)->CurrentLocation();
+	//Desk::GetInstanse().Pieces.at(idWhoMove)
+	Location loc = getPiece(idWhoMove)->CurrentLocation();
 	_gameSound->sound_movePiece.play();
 	getPiece(idWhoMove)->CurrentLocation() = placeToMove;
 }
@@ -119,10 +120,12 @@ void GameLogic::movePieceToKill(string idWhoMove, Location& placeToMove)
 	secPiece->Kill();
 
 	makeMove(idWhoMove, placeToMove);
+
+	_gameSound->sound_enemyPieceDeath.play();
 }
 
 bool GameLogic::isCellEmpty(const Location& loc)
-{
+{//TODO is it mad in propely way
 	if(_desk.PiecesOnPritebleDesk_mask[loc.y][loc.x] == CELL_OCCUPIED)
 		return false;
 

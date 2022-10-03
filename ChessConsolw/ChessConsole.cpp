@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "SystemVariables.h"
+#include "GameSound.h"
 #include "Game.h"
 
 #include <Windows.h>

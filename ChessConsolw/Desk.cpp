@@ -2,10 +2,7 @@
 
 Desk Desk::instanse;
 
-Desk::Desk()
-{
-
-}
+Desk::Desk() { }
 
 Desk& Desk::GetInstanse()
 {

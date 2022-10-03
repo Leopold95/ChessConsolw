@@ -13,147 +13,147 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ChessPiesces">
-      <UniqueIdentifier>{50503fb9-d1da-4da4-b008-f00ba6b2a9be}</UniqueIdentifier>
-    </Filter>
     <Filter Include="System">
       <UniqueIdentifier>{ac08ef54-9206-4e2d-a8ab-b209a15fa99a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Network">
       <UniqueIdentifier>{9f2e50b4-04a1-4153-9985-62e6d029f634}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System\Simple">
-      <UniqueIdentifier>{3478f294-3226-4f2c-9c1c-85d4a10f4f22}</UniqueIdentifier>
+    <Filter Include="ChessPieces">
+      <UniqueIdentifier>{50503fb9-d1da-4da4-b008-f00ba6b2a9be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System\Headers">
-      <UniqueIdentifier>{0f66ba1b-69fc-47ae-80b8-7c0bbffb7f77}</UniqueIdentifier>
+    <Filter Include="System\Single">
+      <UniqueIdentifier>{02408893-d32c-4358-8d6b-94884f47ee1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System\Src">
-      <UniqueIdentifier>{172845c3-7847-4c32-9e28-55eb2121e569}</UniqueIdentifier>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{4c533e86-4632-439e-868c-bafbe5ca733e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChessConsole.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Desk.cpp">
+    <ClCompile Include="Console.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CommandRemouter.cpp">
+    <ClCompile Include="SoundList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SystemVariables.cpp">
+    <ClCompile Include="MovesCalculator.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Client.cpp">
-      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="PieceManager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="PieceList.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLogic.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>ChessPieces</Filter>
     </ClCompile>
     <ClCompile Include="EmptyPiece.hpp">
-      <Filter>ChessPiesces</Filter>
+      <Filter>ChessPieces</Filter>
     </ClCompile>
-    <ClCompile Include="MovesCalculator.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="Client.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandRemouter.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemVariables.cpp">
+      <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="GameSound.cpp">
-      <Filter>System\Src</Filter>
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Desk.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogic.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Desk.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Piece.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Pawn.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandRemouter.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="King.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Queen.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Rook.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Knight.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Bishop.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemVariables.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveType.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="PieceManager.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Pieces.hpp">
-      <Filter>ChessPiesces</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLogic.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Console.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MovesCalculator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Color.hpp">
-      <Filter>System\Simple</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrorMessage.hpp">
-      <Filter>System\Simple</Filter>
-    </ClInclude>
-    <ClInclude Include="Location.hpp">
-      <Filter>System\Simple</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.hpp">
-      <Filter>System\Simple</Filter>
-    </ClInclude>
-    <ClInclude Include="PositionList.hpp">
-      <Filter>System\Simple</Filter>
+    <ClInclude Include="PieceManager.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Utils.hpp">
-      <Filter>System\Simple</Filter>
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="King.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Pieces.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Queen.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Bishop.hpp">
+      <Filter>ChessPieces</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.hpp">
+      <Filter>System\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandRemouter.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemVariables.h">
+      <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="GameSound.h">
-      <Filter>System\Headers</Filter>
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Desk.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveType.hpp">
+      <Filter>System\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.hpp">
+      <Filter>System\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.hpp">
+      <Filter>System\Single</Filter>
     </ClInclude>
     <ClInclude Include="Structs.hpp">
-      <Filter>System\Simple</Filter>
+      <Filter>System\Single</Filter>
     </ClInclude>
     <ClInclude Include="IterableVector.hpp">
-      <Filter>System\Simple</Filter>
+      <Filter>System\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorMessage.hpp">
+      <Filter>System\Single</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
