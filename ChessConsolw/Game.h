@@ -24,6 +24,7 @@ private:
 	CommandRemouter _commandRemouter;
 	PieceManager _pieceManager;
 	GameLogic _gameLogic;
+	ConsolePromoute::Console _console;
 
 	void initialise();
 	void runGameLoop();

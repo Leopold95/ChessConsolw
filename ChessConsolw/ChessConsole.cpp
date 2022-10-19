@@ -44,18 +44,6 @@ void argumentChecker(int c, char* args[])
 	 
 }
 
-void printWhite(std::string piece)
-{
-	printf("\033[38;5;%dm %s\033[m", 15, piece.c_str());
-}
-
-void printBlack(std::string piece)
-{
-	printf("\033[38;5;%dm %s\033[m", 27, piece.c_str());
-}
-
-
-
 int main(int argc, char* argv[])
 {
 	argumentChecker(argc, argv);
@@ -70,10 +58,6 @@ int main(int argc, char* argv[])
 
 	Game* game = new Game();
 	game->startNewGame();
-
-	printBlack("d");
-	printWhite("p");
-
 
 	//Client client("127.0.0.1", 25535);
 	//client.Connect();

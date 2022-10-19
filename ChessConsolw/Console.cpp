@@ -1,34 +1,5 @@
 #include "Console.h"
 
-void ConsolePromoute::Console::println(std::string s)
-{
-	std::cout << s << std::endl;
-}
-
-
-void ConsolePromoute::Console::print()
-{
-}
-
-void ConsolePromoute::Console::print(std::string s, Color c)
-{
-	switch (c)
-	{
-	case ConsolePromoute::Color::WHITE:
-		system("Color " + (char)c);
-		std::cout << s.c_str();
-		break;
-	case ConsolePromoute::Color::LIGHTBLUE:
-		break;
-	case ConsolePromoute::Color::RED:
-		break;
-	default:
-		break;
-	}
-
-	system("Color 7");
-}
-
 std::vector<std::string> ConsolePromoute::Console::getConsoleArgs()
 {
 	const char* str;
@@ -50,4 +21,39 @@ std::vector<std::string> ConsolePromoute::Console::getConsoleArgs()
 	} while (0 != *str++);
 
 	return args;
+}
+
+//void ConsolePromoute::Console::printDesk(Desk& desk)
+//{
+//	for (const auto& [id, piece] : desk.Pieces)
+//	{
+//		if (piece->CurrentColor() == Color::White)
+//		{
+//			serCursorPos(piece->CurrentLocation().x, piece->CurrentLocation().x);
+//			printWhite(_gameLogic.pieceTypeToStr(piece->CurrentPiece()));
+//			continue;
+//		}
+//
+//		if (piece->CurrentColor() == Color::Black)
+//		{
+//			serCursorPos(piece->CurrentLocation().x, piece->CurrentLocation().x);
+//			printBlack(_gameLogic.pieceTypeToStr(piece->CurrentPiece()));
+//			continue;
+//		}
+//	}
+//}
+
+void ConsolePromoute::Console::serCursorPos(int x, int y)
+{
+	printf("%c[%d;%df", 0x1B, y, x);
+}
+
+void ConsolePromoute::Console::printWhite(char piece)
+{
+	printf("\033[38;5;%dm %c\033[m", 15, piece);
+}
+
+void ConsolePromoute::Console::printBlack(char piece)
+{
+	printf("\033[38;5;%dm %c\033[m", 27, piece);
 }

@@ -3,22 +3,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+#include "Color.hpp"
+
+
 namespace ConsolePromoute
 {
-	enum class Color : char
-	{
-		WHITE = 7,
-		LIGHTBLUE = 9,
-		RED = 4
-	};
-
 	class Console
 	{
 	public:
-		static void println(std::string);
-		static void print();
-		static void print(std::string, Color);
 		static std::vector<std::string> getConsoleArgs();
+
+		void serCursorPos(int x, int y);
+		void printWhite(char piece);
+		void printBlack(char piece);
 	};
 };
 

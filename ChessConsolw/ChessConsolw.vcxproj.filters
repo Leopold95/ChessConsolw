@@ -33,9 +33,6 @@
     <ClCompile Include="ChessConsole.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="SoundList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -72,11 +69,11 @@
     <ClCompile Include="GameLogic.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Console.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="SoundList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -154,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="ErrorMessage.hpp">
       <Filter>System\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

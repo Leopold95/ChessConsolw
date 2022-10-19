@@ -11,7 +11,6 @@
 
 
 using std::string;
-using ConsolePromoute::Console;
 
 class Desk
 {
@@ -20,7 +19,7 @@ public:
     Desk(const Desk&) = delete;
 
     void print(string desk[9][9]);
-    void print_new();
+    void printNew();
 
     std::unordered_map<std::string, Piece*> Pieces;
     std::string PritebleDesk[9][9];
@@ -31,9 +30,9 @@ private:
     Desk();
     
     PieceManager _pieceManager;
+    ConsolePromoute::Console _console;
 
-    void printWhite(std::string piece);
-    void printBlack(std::string piece);
+    void setCursorPos(int x, int y);
 
 public:
     const std::unordered_map<std::string, Piece*> DefaultPieces = _pieceManager.placeStarterPieceOnDesk();
