@@ -7,6 +7,8 @@
 #include "GameSound.h"
 #include "Game.h"
 
+#include "includes/rapidyaml-0.4.1.hpp"
+
 #include <Windows.h>
 
 using std::string;
@@ -59,12 +61,14 @@ int main(int argc, char* argv[])
 	Game* game = new Game();
 	game->startNewGame();
 
+	//string data = get
+
 	//Client client("127.0.0.1", 25535);
 	//client.Connect();
 
 
 	std::cin;
-	delete gameSound;
+	//delete gameSound;
 	delete game;
 	delete sv;
 	return 0;
